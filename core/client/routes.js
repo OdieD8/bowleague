@@ -5,12 +5,12 @@ app.config(['$stateProvider', '$urlRouterProvider', routing]);
 function routing($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider
-        .otherwise('/');
+        .otherwise('/home');
 
 
     $stateProvider
         .state('home', {
-            url: '/',
+            url: '/home',
             views: {
                 main: {
                     templateUrl: 'features/home/home.template.html',

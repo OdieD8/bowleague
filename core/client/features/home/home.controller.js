@@ -6,6 +6,8 @@ app.controller('homeController', ['$scope', 'friendService', homeController]);
 
 function homeController($scope, friendService) {
 
+    $scope.test = "Is this really working?";
+    
     $scope.getFriends = function () {
 
         friendService.getFriends()

@@ -1,0 +1,431 @@
+/*
+//////////////////////////
+//////////////////////////
+////// login Style ///////
+//////////////////////////
+//////////////////////////
+*/
+
+
+
+body {
+    font-family: arial;
+     
+    background-color: #323B55;
+    /*background-image: -webkit-linear-gradient(bottom, lightblue 0%, #323B55 100%);
+    background-image: -moz-linear-gradient(bottom, lightblue 0%, #323B55 100%);
+    background-image: -o-linear-gradient(bottom, lightblue 0%, #323B55 100%);
+    background-image: -ms-linear-gradient(bottom, lightblue 0%, #323B55 100%);
+    background-image: linear-gradient(bottom, lightblue 0%, #323B55 100%);*/
+}
+
+.login-container {
+    width: 80%;
+    margin: 60px auto 0px auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#login-header {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+}
+
+.folder {
+    width: 75px;
+    height: 75px;
+    margin-top: 20px;
+}
+
+.ballpins {
+    width: 80px;
+    height: 80px;
+    margin-top: 20px;
+}
+
+#login-p {
+    font-size: 1.2em;
+    text-align: center;
+    color: white;
+}
+
+#sm-p {
+    font-size: 1em;
+    text-align: center;
+    color: white;
+}
+
+#login-box {
+    width: 220px;
+    height: 155px;
+    position: relative;
+    left: 50%;
+    top: 15%;
+    margin-left: -110px;
+    margin-top: -75px;
+}
+
+#login-box input[type="text"],#login-box input[type="password"] {
+    width: 100%;
+    height: 40px;
+    position: relative;
+    margin-top: 7px;
+    font-size: 14px;
+    color: #444;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, .49);
+ 
+    padding-left: 20px;
+     
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding-box;
+    background-clip: padding-box;
+    border-radius: 6px;
+ 
+    background-color: white;
+ 
+    -webkit-box-shadow: inset 0px 2px 0px #d9d9d9;
+    box-shadow: inset 0px 2px 0px #d9d9d9;
+ 
+}
+ 
+#login-box input[type="text"]:focus,#login-box input[type="password"]:focus {
+    -webkit-box-shadow: inset 0px 2px 0px yellow;
+    box-shadow: inset 0px 2px 0px yellow;
+}
+ 
+#login-box input:first-child {
+    margin-top: 0px;
+}
+
+#login-box input[type="submit"] {
+    width: 100%;
+    height: 50px;
+    margin-top: 7px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 0px -1px 0px #5b6ddc;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, .49);
+ 
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding-box;
+    background-clip: padding-box;
+    border-radius: 6px;
+ 
+    background-color: #5466da;
+    background-image: -webkit-linear-gradient(bottom, #5466da 0%, #768ee4 100%);
+    background-image: -moz-linear-gradient(bottom, #5466da 0%, #768ee4 100%);
+    background-image: -o-linear-gradient(bottom, #5466da 0%, #768ee4 100%);
+    background-image: -ms-linear-gradient(bottom, #5466da 0%, #768ee4 100%);
+    background-image: linear-gradient(bottom, #5466da 0%, #768ee4 100%);
+ 
+    cursor: pointer;
+     
+    -webkit-box-shadow: inset 0px 1px 0px #9ab1ec;
+    box-shadow: inset 0px 1px 0px #9ab1ec;
+ 
+}
+ 
+#login-box input[type="submit"]:hover {
+    background-color: #5f73e9;
+    background-image: -webkit-linear-gradient(bottom, #5f73e9 0%, #859bef 100%);
+    background-image: -moz-linear-gradient(bottom, #5f73e9 0%, #859bef 100%);
+    background-image: -o-linear-gradient(bottom, #5f73e9 0%, #859bef 100%);
+    background-image: -ms-linear-gradient(bottom, #5f73e9 0%, #859bef 100%);
+    background-image: linear-gradient(bottom, #5f73e9 0%, #859bef 100%);
+ 
+    -webkit-box-shadow: inset 0px 2px 0px #aab9f4;
+    box-shadow: inset 0px 2px 0px #aab9f4;
+   
+}
+ 
+#login-box input[type="submit"]:active {
+    background-color: red;
+    background-image: -webkit-linear-gradient(bottom, red 0%, orange 100%);
+    background-image: -moz-linear-gradient(bottom, red 0%, orange 100%);
+    background-image: -o-linear-gradient(bottom, red 0%, orange 100%);
+    background-image: -ms-linear-gradient(bottom, red 0%, orange 100%);
+    background-image: linear-gradient(bottom, red 0%, orange 100%);
+ 
+    -webkit-box-shadow: inset 0px 1px 0px #93a9e9;
+    box-shadow: inset 0px 1px 0px #93a9e9;
+}
+
+#login-box label {
+    display: none;
+}
+
+.login-footer {
+    width: 300px;
+    height: 100px;
+    position: relative;
+    left: 50%;
+    top: 15%;
+    margin: 100px auto auto -130px;
+    margin-left: -130px;
+    margin-top: 100px;
+}
+
+.footer-link:link {
+    margin: 5px;
+    font-weight: bold;
+    color: #5466da;
+    text-decoration: none;
+}
+
+.footer-link:active {
+    color: lightblue;
+}
+
+.footer-link:visited {
+    color: #5466da;
+}
+
+.footer-link:hover {
+    color: orange;
+}
+
+/*
+//////////////////////////
+//////////////////////////
+////// Home Style ///////
+//////////////////////////
+//////////////////////////
+*/
+
+body {
+   margin:0;
+   padding:0;
+   height:100%;
+   background-color: white;
+}
+
+#home-menu > ul {
+  list-style: none;
+  margin: 0px 10px;
+  padding: 10px;
+  vertical-align: baseline;
+  line-height: 1;
+  min-height: 300px;
+}
+/* The container */
+#home-menu > ul {
+  display: block;
+  position: relative;
+  width: 210px;
+  /* The list elements which contain the links */
+
+}
+#home-menu > ul li {
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+/* General link styling */
+#home-menu > ul li a {
+  /* Layout */
+
+  display: block;
+  position: relative;
+  margin: 0;
+  border-top: 1px dotted #3a3a3a;
+  border-bottom: 1px dotted #1b1b1b;
+  padding: 20px 30px;
+  /* Typography */
+
+  font-family: Helvetica, Arial, sans-serif;
+  color: #d8d8d8;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-shadow: 0 1px 1px #000;
+  font-size: 15px;
+  font-weight: 300;
+  /* Background & effects */
+
+  background: #282828;
+}
+/* Rounded corners for the first link of the menu/submenus */
+#home-menu > ul li:first-child > a {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-top: 0;
+}
+/* Rounded corners for the last link of the menu/submenus */
+#home-menu > ul li:last-child > a {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom: 0;
+}
+/* The hover state of the menu/submenu links */
+#home-menu > ul li > a:hover,
+#home-menu > ul li:hover > a {
+  color: #ffffff;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+  background: #5f73e9;
+  background: -webkit-linear-gradient(#5f73e9, #5f73e9);
+  background: -moz-linear-gradient(#5f73e9, #5f73e9);
+  background: linear-gradient(#5f73e9, #5f73e9);
+  border-color: transparent;
+}
+/* The arrow indicating a submenu */
+#home-menu > ul .has-sub > a::after {
+  content: "";
+  position: absolute;
+  top: 16px;
+  right: 10px;
+  width: 0px;
+  height: 0px;
+  /* Creating the arrow using borders */
+
+  border: 4px solid transparent;
+  border-left: 4px solid #d8d8d8;
+}
+/* The same arrow, but with a darker color, to create the shadow effect */
+#home-menu > ul .has-sub > a::before {
+  content: "";
+  position: absolute;
+  top: 17px;
+  right: 10px;
+  width: 0px;
+  height: 0px;
+  /* Creating the arrow using borders */
+
+  border: 4px solid transparent;
+  border-left: 4px solid #000;
+}
+/* Changing the color of the arrow on hover */
+#home-menu > ul li > a:hover::after,
+#home-menu > ul li:hover > a::after {
+  border-left: 4px solid #ffffff;
+}
+#home-menu > ul li > a:hover::before,
+#home-menu > ul li:hover > a::before {
+  border-left: 4px solid rgba(0, 0, 0, 0.3);
+}
+/* THE SUBMENUS */
+#home-menu > ul ul {
+  position: absolute;
+  left: 100%;
+  top: -9999px;
+  padding-left: 5px;
+  opacity: 0;
+  width: 170px;
+  /* The fade effect, created using an opacity transition */
+
+  -webkit-transition: opacity 0.3s ease-in;
+  -moz-transition: opacity 0.3s ease-in;
+  transition: opacity 0.3s ease-in;
+}
+/* Showing the submenu when the user is hovering the parent link */
+#home-menu > ul li:hover > ul {
+  top: 0px;
+  opacity: 1;
+}
+
+.has-feedback {
+    position: relative;
+    left: 20px;
+    right: 20px;
+    width: 200px;
+}
+
+.home-header a:link {
+    width: 250px;
+    text-align: left;
+    color: #282828;
+    font-weight: bold;
+    font-size: 25px;
+    text-decoration: none;
+    position: relative;
+    left: 20px;
+    top: 20px;
+}
+
+.home-header a:active {
+    color: #282828;
+}
+
+.home-header a:hover {
+    color: #282828;
+}
+
+.home-header a:visited {
+    color: #282828;
+}
+
+.home-folder {
+    width: 60px;
+    height: 60px;
+    display: block;
+    margin: 35px 80px;
+}
+
+.home-main-container {
+  color: #282828;
+  font-weight: bold;
+  font-size: 25px;
+  text-align: center;
+  position: absolute;
+  top: 200px;
+  left: 215px;
+  width: 75%;
+  padding: 20px;
+  border-radius: 10px;
+ 
+}
+
+#home-search {
+  float:right;
+  margin: 30px 40px 0px 0px;
+}
+
+.login-status {
+  color: #282828;
+  font-weight: bold;
+  font-size: 15px;
+  float: right;
+  margin-top: 35px;
+}
+
+.home-footer {
+  padding: 1%;
+  text-align: center;
+  color: white;
+  font-size: 15px;
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:60px;
+  background:#5f73e9;
+}
+
+.home-email:link {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.home-email:active {
+  color: lightblue;
+}
+
+.home-email:visited {
+  color: white;
+}
+
+.home-email:hover {
+  color: orange;
+  font-weight: bold;
+}

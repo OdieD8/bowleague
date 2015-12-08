@@ -46,7 +46,7 @@ module.exports = function () {
 
 
     // HERE WE CONFIGURE THE ROUTES
-    require('../features/teams/team.server.routes')(app);
+    require('../features/teams/team.server.route')(app);
 
     // THIS WILL BE THE ROOT OF THE ANGULAR APP
     // the route is relative to the root of the project

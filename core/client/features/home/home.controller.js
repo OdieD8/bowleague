@@ -1,49 +1,45 @@
 var app = angular.module('app');
 
 
-app.controller('homeController', ['$scope', 'friendService', homeController]);
+app.controller('homeController', ['$scope', 'teamService', homeController]);
 
 
-function homeController($scope, friendService) {
+function homeController($scope, teamService) {
 
     $scope.test = "Is this really working?";
     
-    $scope.getFriends = function () {
+    $scope.getTeams = function () {
 
-        friendService.getFriends()
+        teamService.getTeams()
             .then(function (data) {
 
-                $scope.friends = data;
+                $scope.teams = data;
             });
     };
 
 
-    $scope.getFriendById = function (id) {
+    $scope.getTeamById = function (id) {
 
-        friendService.getFriendById(id)
+        teamService.getTeamById(id)
             .then(function (data) {
 
-                $scope.friend = data;
+                $scope.team = data;
             });
     };
 
 
-    $scope.postNewFriend = function () {
+    $scope.postNewTeam = function () {
 
         if (!$scope.name) {
-            $scope.flash = "Please enter a name!";
-        }
-
-        else if (!$scope.age || /[^0-9]/.test($scope.age)) {
-            $scope.flash = "Please enter an age (needs to be a number, dummy!)";
+            $scope.flash = "Please enter a new team";
         }
 
         else {
-            var newFriend = {
+            var newTeam = {
                 name: $scope.name,
                 age: $scope.age
             };
-            friendService.postNewFriend(newFriend)
+            teamService.postNewTeam(newTeam)
                 .then(function (data) {
 
                     $scope.flash = data;

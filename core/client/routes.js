@@ -13,7 +13,7 @@ function routing($stateProvider, $urlRouterProvider) {
             url: '/home',
             views: {
                 main: {
-                    templateUrl: 'features/home/home.template.html',
+                    templateUrl: './features/home/home.template.html',
                     controller: 'homeController'
                 }
             }

@@ -1,23 +1,23 @@
 var app = angular.module('app');
 
 
-app.service('friendService', ['$q', '$http', friendService]);
+app.service('teamService', ['$q', '$http', teamService]);
 
 
-function friendService($q, $http) {
+function teamService($q, $http) {
 
-    this.getFriends = function () {
+    this.getTeams = function () {
 
-        return $http.get('/api/friends')
+        return $http.get('/api/team')
             .then(function (response) {
                 return response.data;
             });
     };
 
 
-    this.getFriendById = function (id) {
+    this.getTeamById = function (id) {
 
-        return $http.get('/api/friends/' + id)
+        return $http.get('/api/team/' + id)
             .then(function (response) {
 
                 console.log(response);
@@ -30,13 +30,13 @@ function friendService($q, $http) {
     };
 
 
-    this.postNewFriend = function (friend) {
+    this.postNewTeam = function (Team) {
 
-        return $http.post('/api/friends', friend)
+        return $http.post('/api/team', Team)
             .then(function (response) {
 
                 console.log(response);
-                return "friend added!";
+                return "Team Added!";
             }, function (error) {
                 console.log(error);
                 return error;

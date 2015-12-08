@@ -7,17 +7,12 @@ var express = require('express'),
     methodOverride = require('method-override'),
     session = require('express-session'),
     morgan = require('morgan'),
-    config = require('./config'),
-    mongojs = require('mongojs');
+    config = require('./config');
 
 
 module.exports = function () {
 
     var app = express();
-
-    var db = mongojs('library');
-    var Book = db.collection('books');
-
 
     // MIDDLEWARE NEEDED BOTH FOR DEV AND PRODUCTION
 
@@ -51,27 +46,7 @@ module.exports = function () {
 
 
     // HERE WE CONFIGURE THE ROUTES
-    require('../features/friends/friend.server.routes')(app);
-
-    // quick experiment with mongojs
-    app.post('/api/books', function (req, res) {
-
-        Book.insert(req.body, function (err, result) {
-
-            if (err) res.send(err);
-            else res.json(result);
-        });
-    });
-    
-    app.get('/api/books', function (req, res) {
-        
-        Book.find({}, function (err, result) {
-            
-            if (err) res.send(err);
-            else res.json(result);
-        });
-    });
-
+    require('../features/teams/team.server.routes')(app);
 
     // THIS WILL BE THE ROOT OF THE ANGULAR APP
     // the route is relative to the root of the project

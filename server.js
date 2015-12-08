@@ -1,9 +1,10 @@
 // Heroku sets the value of process.env.NODE_ENV
-process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+// process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 
 // Heroku sets the port, but we also need a port for development
-var port = process.env.PORT || 8000;
+// var port = process.env.PORT || 8000;
+var port = 8500;
 
 
 // Including the configured express and mongoose objects
@@ -18,5 +19,5 @@ var db = mongoose(),
 
 // Let's listen for incoming calls!
 app.listen(port, function () {
-    console.log('listening on ' + port);
+    console.log("listening on port:" + port);
 });

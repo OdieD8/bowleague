@@ -1,6 +1,15 @@
-<div>{{ team.matches }}</div>
+<menu></menu>
 
-<input type="number" ng-model="matches.ptsWon" placeholder="Points Won"></input>
-<input type="number" ng-model="matches.ptsLost" placeholder="Points Lost"></input>
-<input type="number" ng-model="matches.totalPins" placeholder="Total Pins"></input>
+<br>
+Update Matches for {{ team.name }}<br>
+<input type="text" ng-model="matches.ptsWon" placeholder="Points Won"></input>
+<input type="text" ng-model="matches.ptsLost" placeholder="Points Lost"></input>
+<input type="text" ng-model="matches.totalPins" placeholder="Total Pins"></input>
 <a ng-click="updateMatch()">click here</a>
+<br>
+<br>
+{{ team.name }}<br>
+Matches Won: {{ team.matches[0].ptsWon }}
+
+<div ng-repeat="player in team.players">{{ player }}</div>
+<div 

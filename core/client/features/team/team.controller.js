@@ -5,7 +5,6 @@ app.controller('teamController', ['$scope', '$stateParams', 'teamService', teamC
 
 function teamController($scope, $stateParams, teamService) {
 	
-		$scope.test = "Is this really working?";
 		var id = $stateParams.id;
 		
 		$scope.getTeamById = function(id) {
@@ -17,7 +16,7 @@ function teamController($scope, $stateParams, teamService) {
 		$scope.getTeamById(id);
 
 		$scope.updateMatch = function() {
-			alert("hi");
+	
 			teamService.updateMatch(id, $scope.matches).then(function(response) {
 				console.log(response);
 			});

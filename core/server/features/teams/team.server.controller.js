@@ -13,7 +13,7 @@ exports.getTeam = function (req, res, next) {
 // /api/teams (GET)
 exports.getTeams = function (req, res, next) {
 	
-	Team.find({}, 'name', function (err, results) {
+	Team.find({}, 'name matches', function (err, results) {
 		
 		if (err) res.status(500).send(err);
 		else res.json(results);
@@ -31,8 +31,9 @@ exports.addTeam = function (req, res, next) {
 	});
 };
 
+// /api/team (PUT)
 exports.updateMatch = function (req, res, next) {
-	console.log(req.body);
+	
 	Team.findByIdAndUpdate(req.params.id, {$push: {'matches':req.body}}, function (err, results) {
 		
 		if (err) res.status(500).send(err);

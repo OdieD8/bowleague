@@ -44,11 +44,9 @@ function teamService($q, $http) {
     };
     
     this.updateMatch = function (id, match) {
-        console.log(match);
+
         return $http.put('/api/team/' + id, match)
             .then(function (response) {
-                    
-                console.log(response.data);
                 return response.data;
             }, function (error) {
                 console.log(error);

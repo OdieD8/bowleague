@@ -12,7 +12,9 @@
     "mongoose": "^4.2.5",
     "morgan": "^1.6.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "live-server": "^0.8.2"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"

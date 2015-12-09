@@ -9,7 +9,7 @@ module.exports = function (app) {
 		.put(Ctrl.updateMatch);
 
 	app.route("/api/team/")
-			.post(Ctrl.addTeam)
+		.post(Ctrl.addTeam)
 		
 	app.route("/api/teams")
 		.get(Ctrl.getTeams);

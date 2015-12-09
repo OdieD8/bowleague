@@ -10,12 +10,15 @@ function routing($stateProvider, $urlRouterProvider) {
 
     $stateProvider
         .state('home', {
-            url: '/home',
-            views: {
-                main: {
-                    templateUrl: './features/home/home.template.html',
-                    controller: 'homeController'
-                }
-            }
-        });
+            url: '/home',   
+            templateUrl: './features/home/home.template.html',
+            controller: 'homeController'
+        })
+            
+        .state('team', {
+            url: '/team/:id',
+            templateUrl: './features/team/team.template.html',
+            controller: 'teamController'
+                
+        })  
 }

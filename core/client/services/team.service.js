@@ -8,7 +8,7 @@ function teamService($q, $http) {
 
     this.getTeams = function () {
 
-        return $http.get('/api/team')
+        return $http.get('/api/teams')
             .then(function (response) {
                 return response.data;
             });
@@ -20,12 +20,12 @@ function teamService($q, $http) {
         return $http.get('/api/team/' + id)
             .then(function (response) {
 
-                console.log(response);
+                console.log(response.data);
                 return response.data;
             }, function (error) {
 
                 console.log(error);
-                return "sorry, there is nobody by that id";
+                return "sorry, there is no team by that id";
             });
     };
 
@@ -37,6 +37,19 @@ function teamService($q, $http) {
 
                 console.log(response);
                 return "Team Added!";
+            }, function (error) {
+                console.log(error);
+                return error;
+            });
+    };
+    
+    this.updateMatch = function (id, match) {
+        console.log(match);
+        return $http.put('/api/team/' + id, match)
+            .then(function (response) {
+                    
+                console.log(response.data);
+                return response.data;
             }, function (error) {
                 console.log(error);
                 return error;

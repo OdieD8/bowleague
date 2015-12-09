@@ -16,7 +16,8 @@ function homeController($scope, teamService) {
                 $scope.teams = data;
             });
     };
-
+    
+    $scope.getTeams();
 
     $scope.getTeamById = function (id) {
 
@@ -37,7 +38,8 @@ function homeController($scope, teamService) {
         else {
             var newTeam = {
                 name: $scope.name,
-                age: $scope.age
+                players: $scope.players,
+                matches: $scope.matches
             };
             teamService.postNewTeam(newTeam)
                 .then(function (data) {
@@ -45,7 +47,8 @@ function homeController($scope, teamService) {
                     $scope.flash = data;
                 });
             $scope.name = "";
-            $scope.age = "";
+            $scope.players = [];
+            $scope.matches = [];
         }
 
     };

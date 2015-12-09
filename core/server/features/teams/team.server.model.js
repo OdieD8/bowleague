@@ -8,7 +8,7 @@ var Team = new Schema({
 		ptsWon: { type: Number, required: true },
 		ptsLost: { type: Number, required: true },
 		totalPins: { type: Number},
-		date: { type: Date, default: new Date() }
+		// date: { type: Date, default: new Date() }
 	}]
 });
 

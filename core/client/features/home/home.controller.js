@@ -51,7 +51,10 @@ function homeController($scope, teamService, uiGridConstants) {
         data: "teams",
         enableSorting: true,
         columnDefs: [
-            { name: 'Name', field: 'name'},
+            { 
+                name: 'Name',
+                field: 'name'
+            },
             { 
                 name: 'Points Won',
                 field: 'totalPtsWon',  
@@ -100,4 +103,4 @@ function homeController($scope, teamService, uiGridConstants) {
         }
 
     };
-}
+};

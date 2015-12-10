@@ -9,6 +9,11 @@ function routing($stateProvider, $urlRouterProvider) {
 
 
     $stateProvider
+        .state('login', {
+            url: '/login',
+            templateUrl: '/features/login/login.template.html',
+            controller: 'loginController'
+        })
         .state('home', {
             url: '/home',   
             templateUrl: './features/home/home.template.html',

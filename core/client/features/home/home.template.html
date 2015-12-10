@@ -1,9 +1,17 @@
-<menu></menu>
-
-<h3>League Standings</h3>
-<br>
-<br>
-
-<div ui-grid="gridOptions" class="myGrid"></div>
 
 
+<div class="form-group has-feedback" id="home-search">
+	<input type="search" class="form-control" ng-model="city" placeholder="SEARCH" />
+	<span class="glyphicon glyphicon-search form-control-feedback"></span>
+</div>
+<div class="login-status" ng-model="login-status">login status/name here</div>
+<header class="home-header"><a href="#/home">bowleague</a></header>
+<img class="home-folder" src="http://icons.iconarchive.com/icons/media-design/hydropro-v2/512/Folder-icon.png"></img>
+<div id='home-menu'>
+	<div class="home-main-container">
+		<h3>League Standings</h3><br><br>
+		<div ui-grid="gridOptions" class="myGrid"></div>
+	</div>
+	<menu id="home-menu"></menu>
+</div>
+<footer class="home-footer">&copy; OD-Werks<a href="mailto:odie_de_moura@hotmail.com" target="_top" class="home-email">GET IN TOUCH</a></footer>

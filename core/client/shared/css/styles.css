@@ -10,8 +10,6 @@
 
 body {
     font-family: arial;
-     
-    background-color: #323B55;
     /*background-image: -webkit-linear-gradient(bottom, lightblue 0%, #323B55 100%);
     background-image: -moz-linear-gradient(bottom, lightblue 0%, #323B55 100%);
     background-image: -o-linear-gradient(bottom, lightblue 0%, #323B55 100%);
@@ -23,7 +21,8 @@ body {
     width: 80%;
     margin: 60px auto 0px auto;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 10px; 
+    background-color: #323B55;
 }
 
 #login-header {
@@ -202,12 +201,12 @@ body {
 //////////////////////////
 */
 
-body {
+/*body {
    margin:0;
    padding:0;
    height:100%;
    background-color: white;
-}
+}*/
 
 #home-menu > ul {
   list-style: none;
@@ -374,15 +373,23 @@ body {
 .home-main-container {
   color: #282828;
   font-weight: bold;
-  font-size: 25px;
+ 
   text-align: center;
+  align-content: center;
   position: absolute;
-  top: 200px;
+  top: 50px;
   left: 215px;
+  /*margin: 20px auto 25px auto;*/
   width: 75%;
   padding: 20px;
   border-radius: 10px;
- 
+}
+
+.myGrid {
+  width: 70%;
+  height: 250px;
+  text-align: left;
+  margin: 0 auto;
 }
 
 #home-search {
@@ -430,7 +437,3 @@ body {
   font-weight: bold;
 }
 
-.myGrid {
-  width: 500px;
-  height: 250px;
-}

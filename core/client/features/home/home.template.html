@@ -1,6 +1,9 @@
 <menu></menu>
 
 <h3>League Standings</h3>
-
-<li ng-repeat="team in teams"><a ui-sref="team({id: team._id})">{{ team.name }} {{ team.totalPtsWon }} {{ team.totalPtsLost }} {{ team.totalPins }}</a></li>
 <br>
+<br>
+
+<div ui-grid="gridOptions" class="myGrid"></div>
+
+

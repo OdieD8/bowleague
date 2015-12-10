@@ -429,3 +429,8 @@ body {
   color: orange;
   font-weight: bold;
 }
+
+.myGrid {
+  width: 500px;
+  height: 250px;
+}

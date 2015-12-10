@@ -1,11 +1,11 @@
 var app = angular.module('app');
 
 
-app.controller('homeController', ['$scope', 'teamService', homeController]);
+app.controller('homeController', ['$scope', 'teamService', 'uiGridConstants', homeController]);
 
 
-function homeController($scope, teamService) {
-
+function homeController($scope, teamService, uiGridConstants) {
+    
     $scope.getTeams = function () {
         
         teamService.getTeams()
@@ -43,12 +43,28 @@ function homeController($scope, teamService) {
                     });
                     data[i].totalPins = totalPins;
                 }
-                
-                console.log(data);                
                 $scope.teams = data;
             });
     };
     
+    $scope.gridOptions = {
+        data: "teams",
+        enableSorting: true,
+        columnDefs: [
+            { name: 'Name', field: 'name'},
+            { 
+                name: 'Points Won',
+                field: 'totalPtsWon',  
+                sort: {
+                    direction: uiGridConstants.DESC,
+                    priority: 0
+                } 
+            },
+            { name: 'Points Lost', field: 'totalPtsLost'},
+            { name: 'Total Pins', field: 'totalPins'}
+        ]
+    };
+     
     $scope.getTeams();
 
     $scope.getTeamById = function (id) {

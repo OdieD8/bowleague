@@ -10,6 +10,7 @@ function teamService($q, $http) {
 
         return $http.get('/api/teams')
             .then(function (response) {
+    
                 return response.data;
             });
     };
@@ -20,8 +21,8 @@ function teamService($q, $http) {
         return $http.get('/api/team/' + id)
             .then(function (response) {
 
-                console.log(response.data);
                 return response.data;
+
             }, function (error) {
 
                 console.log(error);
@@ -37,6 +38,7 @@ function teamService($q, $http) {
 
                 console.log(response);
                 return "Team Added!";
+
             }, function (error) {
                 console.log(error);
                 return error;
@@ -48,6 +50,7 @@ function teamService($q, $http) {
         return $http.put('/api/team/' + id, match)
             .then(function (response) {
                 return response.data;
+                console.log(response.data);
             }, function (error) {
                 console.log(error);
                 return error;

@@ -3,7 +3,6 @@ var app = angular.module('app');
 
 app.controller('homeController', ['$scope', 'teamService', 'uiGridConstants', homeController]);
 
-
 function homeController($scope, teamService, uiGridConstants) {
     
     $scope.getTeams = function () {

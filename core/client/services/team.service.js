@@ -31,9 +31,9 @@ function teamService($q, $http) {
     };
 
 
-    this.postNewTeam = function (Team) {
+    this.postNewTeam = function (newTeam) {
 
-        return $http.post('/api/team', Team)
+        return $http.post('/api/team', newTeam)
             .then(function (response) {
 
                 console.log(response);

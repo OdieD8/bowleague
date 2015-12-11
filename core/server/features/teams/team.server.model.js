@@ -3,10 +3,10 @@ var mongoose = require("mongoose"),
 	
 var Team = new Schema({
 	name: { type: String, lowercase: true },
-	players: [{ type: Schema.Types.ObjectId, ref: 'Player', required: true }],
+	players: [{type: String}],
 	matches: [{
-		ptsWon: { type: Number, required: true },
-		ptsLost: { type: Number, required: true },
+		ptsWon: { type: Number },
+		ptsLost: { type: Number },
 		totalPins: { type: Number},
 		date: { type: Date, default: new Date() },
 		_id: false,

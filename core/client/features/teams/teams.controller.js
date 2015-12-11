@@ -15,4 +15,10 @@ function teamsController($scope, $stateParams, teamService) {
 	};
 	
 	$scope.getTeams();
+	
+	$scope.postNewTeam = function() {
+		teamService.postNewTeam($scope.newTeam).then(function (data) {
+			console.log(data);
+		})
+	}
 };

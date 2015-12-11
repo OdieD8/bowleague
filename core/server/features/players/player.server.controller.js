@@ -32,7 +32,7 @@ exports.addPlayer = function (req, res, next) {
 };
 
 // /api/player/:id (PUT)
-exports.updateMatch = function (req, res, next) {
+exports.updateGames = function (req, res, next) {
 	
 	Player.findByIdAndUpdate(req.params.id, {$push: {'name':req.body}}, function (err, results) {
 		

@@ -2,16 +2,16 @@ var Ctrl = require("./team.server.controller");
 
 module.exports = function (app) {
 	
-	app.route("/api/team/:id")
-		.get(Ctrl.getTeam);
+	app.route("/api/player/:id")
+		.get(Ctrl.getplayer);
 		
-	app.route("/api/team/:id")
-		.put(Ctrl.updateMatch);
+	app.route("/api/player/:id")
+		.put(Ctrl.updateGames);
 
-	app.route("/api/team/")
-		.post(Ctrl.addTeam)
+	app.route("/api/player/")
+		.post(Ctrl.addplayer)
 		
-	app.route("/api/teams")
-		.get(Ctrl.getTeams);
+	app.route("/api/players")
+		.get(Ctrl.getplayers);
 				
 };

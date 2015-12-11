@@ -3,6 +3,7 @@ var mongoose = require("mongoose"),
 	
 var Player = new Schema({
 	name: { type: String, lowercase: true, required: true },
+	team: { type: String, lowercase: true, required: true },
 	games: [{
 		gm1: { type: Number, required: true },
 		gm2: { type: Number, required: true },

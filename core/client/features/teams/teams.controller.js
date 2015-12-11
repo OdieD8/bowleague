@@ -16,7 +16,15 @@ function teamsController($scope, $stateParams, teamService) {
 	
 	$scope.getTeams();
 	
+	$scope.myPlayers = [];
+	
+	$scope.addNewPlayer = function() {
+		$scope.myPlayers.push($scope.newPlayer);
+		$scope.newPlayer = "";
+	};
+	
 	$scope.postNewTeam = function() {
+		$scope.newTeam.players = $scope.myPlayers;
 		teamService.postNewTeam($scope.newTeam).then(function (data) {
 			console.log(data);
 		})

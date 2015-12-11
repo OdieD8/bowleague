@@ -56,5 +56,17 @@ function teamService($q, $http) {
                 return error;
             });
     };
+    
+    this.removeTeam = function (id) {
+        
+        return $http.delete('/api/team/' + id)
+            .then(function (response) {
+                console.log(response);
+                return "Team Removed!";
+            }, function (error) {
+                console.log(error);
+                return error;
+            });  
+    };
 
 }

@@ -1,1 +1,1 @@
-angular.module('app', ['ui.router', 'ui.grid', 'ngAnimate']);
+angular.module('app', ['ui.router', 'ui.grid', 'ui.grid.autoResize', 'ngAnimate']);

@@ -1,9 +1,9 @@
 var app = angular.module('app');
 
 
-app.controller('teamController', ['$scope', '$stateParams', 'teamService', teamController]);
+app.controller('teamController', ['$scope', '$state', '$stateParams', 'teamService', teamController]);
 
-function teamController($scope, $stateParams, teamService) {
+function teamController($scope, $state, $stateParams, teamService) {
 
         var id = $stateParams.id;
 
@@ -54,12 +54,15 @@ function teamController($scope, $stateParams, teamService) {
         };
 
         $scope.removeTeam = function () {
-                
-                teamService.removeTeam(id).then(function (data) {
-                        console.log(data);     
-                });
+                var result = confirm("Are you sure you want to remove this team?");
+                        if (result) {
+                                teamService.removeTeam(id).then(function (data) {
+                                console.log(data);
+                                $state.go("home");
+                                
+                        });
+                }     
         };
-
 
 
 

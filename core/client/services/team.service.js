@@ -41,6 +41,7 @@ function teamService($q, $http) {
 
             }, function (error) {
                 console.log(error);
+                alert("Could not add team. Make sure you have at least five players");
                 return error;
             });
     };

@@ -1,8 +1,8 @@
 var app = angular.module('app');
 
-app.controller('teamsController', ['$scope', '$stateParams', 'teamService', teamsController]);
+app.controller('teamsController', ['$scope', '$state', '$stateParams', 'teamService', teamsController]);
 
-function teamsController($scope, $stateParams, teamService) {
+function teamsController($scope, $state, $stateParams, teamService) {
 	
 	$scope.getTeams = function () {
         
@@ -27,6 +27,9 @@ function teamsController($scope, $stateParams, teamService) {
 		$scope.newTeam.players = $scope.myPlayers;
 		teamService.postNewTeam($scope.newTeam).then(function (data) {
 			console.log(data);
+			$state.go("home");
+			alert($scope.newTeam.name + " added");
+			
 		})
 	}
 };

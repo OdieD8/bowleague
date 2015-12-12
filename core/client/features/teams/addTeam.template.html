@@ -3,7 +3,7 @@
 <br>
 Add A New Team in Woody's Almost Classic League<br><br>
 Team Name&nbsp&nbsp<input type="text" ng-model="newTeam.name" placeholder=""></input><br><br>
-Add up to 9 players (minimum of 5)<br>
+Add Players<br>
 <!--<input type="text" ng-model="players.p1" placeholder="Player 1" required></input><br>
 <input type="text" ng-model="players.p2" placeholder="Player 2" required></input><br>
 <input type="text" ng-model="players.p3" placeholder="Player 3" required></input><br>
@@ -20,6 +20,6 @@ Add up to 9 players (minimum of 5)<br>
 </form>
 <button ng-click="addNewPlayer()">add new player</button>
 <ul>
-	<li ng-repeat="player in myPlayers track by $index" >{{ player }}<button ng-click="delete(players, $index)">Delete</button></li>
+	<li ng-repeat="player in myPlayers track by $index" >{{ player }}<button ng-click="delete(players, $index)">Remove</button></li>
 </ul>
 <input type="submit" value="Submit" ng-click="postNewTeam()"></input><br>

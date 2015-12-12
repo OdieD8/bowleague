@@ -1,9 +1,9 @@
 var app = angular.module('app');
 
 
-app.controller('homeController', ['$scope', 'teamService', 'uiGridConstants', homeController]);
+app.controller('homeController', ['$scope', '$filter', 'teamService', 'uiGridConstants', homeController]);
 
-function homeController($scope, teamService, uiGridConstants) {
+function homeController($scope, $filter, teamService, uiGridConstants) {
     
     $scope.getTeams = function () {
         
@@ -48,11 +48,15 @@ function homeController($scope, teamService, uiGridConstants) {
     
     $scope.gridOptions = {
         data: "teams",
+        enableFiltering: true,
         enableSorting: true,
         columnDefs: [
             { 
                 name: 'Name',
-                field: 'name'
+                field: 'name',
+                cellTemplate: '<div class="ui-grid-cell-contents"><a ui-sref="team({id: team._id})">{{ COL_FIELD }}</a></div>',
+                enableFiltering: true,
+                enableSorting: false
             },
             { 
                 name: 'Points Won',
@@ -60,10 +64,11 @@ function homeController($scope, teamService, uiGridConstants) {
                 sort: {
                     direction: uiGridConstants.DESC,
                     priority: 0
-                } 
+                },
+                enableFiltering: false
             },
-            { name: 'Points Lost', field: 'totalPtsLost'},
-            { name: 'Total Pins', field: 'totalPins'}
+            { name: 'Points Lost', field: 'totalPtsLost', enableFiltering: false},
+            { name: 'Total Pins', field: 'totalPins', enableFiltering: false}
         ]
     };
      
@@ -102,4 +107,5 @@ function homeController($scope, teamService, uiGridConstants) {
         }
 
     };
+
 };

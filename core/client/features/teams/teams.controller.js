@@ -18,9 +18,20 @@ function teamsController($scope, $state, $stateParams, teamService) {
 	
 	$scope.myPlayers = [];
 	
+	$scope.playerAdded = false;
+	
 	$scope.addNewPlayer = function() {
 		$scope.myPlayers.push($scope.newPlayer);
 		$scope.newPlayer = "";
+		$scope.playerAdded = true;
+	};
+	
+	$scope.delete = function(array, index) {
+
+		if ($scope.myPlayers.length < 2) {
+			$scope.playerAdded = false;
+		}
+		array.splice(index, 1);
 	};
 	
 	$scope.postNewTeam = function() {

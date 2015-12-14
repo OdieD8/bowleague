@@ -1,5 +1,45 @@
-<menu id='home-menu'></menu>
-Select Team to update
-<li ng-repeat="team in teams"><a ui-sref="team({id: team._id})">{{ team.name }} </a></li>
+		<div class="header">
+			<div class="container">
+				<h1 class="header-heading">bowleague<img class="banner-image" src="../shared/images/page-top-bowling.jpg"></img></h1>
+			</div>
+		</div>
+		<div class="nav-bar">
+			<div class="container">
+				<ul class="nav">
+<!--
+					<li><a href="#">HOME</a></li>
+					<li><a href="#">TEAMS</a></li>
+					<li><a href="#">PLAYERS</a></li>
+-->
+                    <li><a href="#/home" id="btn">HOME</a></li>
+					<li><a href="#/teams" id="btn">TEAMS</a></li>
+					<li><a href="#/players" id="btn">PLAYERS</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="content">
+			<div class="container">
+				<div class="main">
+					<h1>Woody's Almost Classic 2015 - 2016 Teams</h1>
+					<hr>
+                    
+					<div class="grid-responsive">
+                       
+                        <h3><strong>SELECT TEAM TO UPDATE</strong></h3>
+                        <li class="teams-list" ng-repeat="team in teams"><a ui-sref="team({id: team._id})">{{ team.name }} </a></li><br>
 
-<input type="submit" value="Add New team" ui-sref="addTeam"></input>
+                        <input id="btn-team-match" type="submit" value="Add New Team" ui-sref="addTeam"></input>
+                        
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="container">
+                <ul class="footer-nav">
+                    <li>&copy; OD-Werks</li>
+                    <li><a href="mailto:odie_de_moura@hotmail.com" target="_top" class="home-email">GET IN TOUCH</a></li>
+                </ul>
+			</div>
+		</div>

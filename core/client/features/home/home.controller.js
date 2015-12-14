@@ -54,7 +54,7 @@ function homeController($scope, $filter, teamService, uiGridConstants) {
             { 
                 name: 'Name',
                 field: 'name',
-                cellTemplate: '<div class="ui-grid-cell-contents"><a ui-sref="team({id: team._id})">{{ COL_FIELD }}</a></div>',
+                cellTemplate: '<div class="ui-grid-cell-contents"><a href="#/team/{{row.entity._id}}">{{ COL_FIELD }}</a></div>',
                 enableFiltering: true,
                 enableSorting: false
             },

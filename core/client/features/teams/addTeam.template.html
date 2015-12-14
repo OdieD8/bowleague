@@ -1,25 +1,57 @@
-<menu id="home-menu"></menu>
-
-<br>
-Add A New Team in Woody's Almost Classic League<br><br>
-Team Name&nbsp&nbsp<input type="text" ng-model="newTeam.name" placeholder=""></input><br><br>
-Add Players<br>
-<!--<input type="text" ng-model="players.p1" placeholder="Player 1" required></input><br>
-<input type="text" ng-model="players.p2" placeholder="Player 2" required></input><br>
-<input type="text" ng-model="players.p3" placeholder="Player 3" required></input><br>
-<input type="text" ng-model="players.p4" placeholder="Player 4" required></input><br>
-<input type="text" ng-model="players.p5" placeholder="Player 5" required></input><br>
-<input type="text" ng-model="players.p6" placeholder="Player 6"></input><br>
-<input type="text" ng-model="players.p7" placeholder="Player 7"></input><br>
-<input type="text" ng-model="players.p8" placeholder="Player 8"></input><br>
-<input type="text" ng-model="players.p9" placeholder="Player 9"></input><br>-->
-
-
-<form ng-submit="addNewPlayer()">
-	<input ng-model="newPlayer" placeholder="Please Type a New Player"></input>
-</form>
-<button ng-click="addNewPlayer()">add new player</button>
-<ul>
-	<li ng-repeat="player in myPlayers track by $index" >{{ player }}<button ng-click="delete(players, $index)">Remove</button></li>
-</ul>
-<input type="submit" value="Submit" ng-click="postNewTeam()"></input><br>
+<div class="header">
+			<div class="container">
+				<h1 class="header-heading">bowleague<img class="banner-image" src="../shared/images/page-top-bowling.jpg"></img></h1>
+			</div>
+		</div>
+		<div class="nav-bar">
+			<div class="container">
+				<ul class="nav">
+<!--
+					<li><a href="#">HOME</a></li>
+					<li><a href="#">TEAMS</a></li>
+					<li><a href="#">PLAYERS</a></li>
+-->
+                    <li><a href="#/home" id="btn">HOME</a></li>
+					<li><a href="#/teams" id="btn">TEAMS</a></li>
+					<li><a href="#/players" id="btn">PLAYERS</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="content">
+			<div class="container">
+				<div class="main">
+					<h1>Add A New Team</h1>
+					<hr>
+					
+					<h4>Team Name&nbsp&nbsp</h4><input type="text" class="team-match-input" ng-model="newTeam.name" placeholder=""></input><br><br>
+					<h4>Players</h4>
+					<!--<input type="text" ng-model="players.p1" placeholder="Player 1" required></input><br>
+					<input type="text" ng-model="players.p2" placeholder="Player 2" required></input><br>
+					<input type="text" ng-model="players.p3" placeholder="Player 3" required></input><br>
+					<input type="text" ng-model="players.p4" placeholder="Player 4" required></input><br>
+					<input type="text" ng-model="players.p5" placeholder="Player 5" required></input><br>
+					<input type="text" ng-model="players.p6" placeholder="Player 6"></input><br>
+					<input type="text" ng-model="players.p7" placeholder="Player 7"></input><br>
+					<input type="text" ng-model="players.p8" placeholder="Player 8"></input><br>
+					<input type="text" ng-model="players.p9" placeholder="Player 9"></input><br>-->
+					
+					
+					<form ng-submit="addNewPlayer()">
+						<input class="team-match-input" ng-model="newPlayer" placeholder=""></input><br>
+					</form>
+					<button id="btn-team-match" ng-click="addNewPlayer()">Add Player</button><br>
+					<ul>
+						<li class="teams-list" ng-repeat="player in myPlayers" >{{ player }}<button id="new-team-remove" ng-click="delete(myPlayers, $index)">Remove</button></li>
+					</ul>
+					<input id="btn-team-match" ng-show="playerAdded" type="submit" value="SUBMIT" ng-click="postNewTeam()"></input><br>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="container">
+                <ul class="footer-nav">
+                    <li>&copy; OD-Werks</li>
+                    <li><a href="mailto:odie_de_moura@hotmail.com" target="_top" class="home-email">GET IN TOUCH</a></li>
+                </ul>
+			</div>
+		</div>

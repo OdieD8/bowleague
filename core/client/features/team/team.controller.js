@@ -49,7 +49,9 @@ function teamController($scope, $state, $stateParams, teamService) {
         $scope.updateMatch = function () {
 
                 teamService.updateMatch(id, $scope.matches).then(function (data) {
+                        alert("Match Added");
                         console.log(data);
+                        $state.go("home");
                 });
         };
 

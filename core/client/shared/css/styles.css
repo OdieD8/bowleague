@@ -194,7 +194,7 @@ html, body{height:100%; margin:0px; padding:0px;}*/
 //////////////////////////
 */
 
-.contain {
+/*.contain {
   width: 100%;
   height: 100%;
   margin: 60px 0px;
@@ -250,12 +250,12 @@ html, body{height:100%; margin:0px; padding:0px;}*/
   line-height: 1;
   min-height: 300px;
 }
-/* The container */
-#home-menu > ul {
+
+/*#home-menu > ul {
   display: block;
   position: relative;
   width: 210px;
-  /* The list elements which contain the links */
+ 
 
 }
 #home-menu > ul li {
@@ -265,9 +265,9 @@ html, body{height:100%; margin:0px; padding:0px;}*/
   padding: 0;
   width: 100%;
 }
-/* General link styling */
+
 #home-menu > ul li a {
-  /* Layout */
+
 
   display: block;
   position: relative;
@@ -275,7 +275,7 @@ html, body{height:100%; margin:0px; padding:0px;}*/
   border-top: 1px dotted #3a3a3a;
   border-bottom: 1px dotted #1b1b1b;
   padding: 20px 30px;
-  /* Typography */
+  
 
   font-family: Helvetica, Arial, sans-serif;
   color: #d8d8d8;
@@ -284,23 +284,23 @@ html, body{height:100%; margin:0px; padding:0px;}*/
   text-shadow: 0 1px 1px #000;
   font-size: 15px;
   font-weight: 300;
-  /* Background & effects */
+  
 
   background: #282828;
 }
-/* Rounded corners for the first link of the menu/submenus */
+
 #home-menu > ul li:first-child > a {
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
   border-top: 0;
 }
-/* Rounded corners for the last link of the menu/submenus */
+
 #home-menu > ul li:last-child > a {
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
   border-bottom: 0;
 }
-/* The hover state of the menu/submenu links */
+
 #home-menu > ul li > a:hover,
 #home-menu > ul li:hover > a {
   color: #ffffff;
@@ -311,7 +311,7 @@ html, body{height:100%; margin:0px; padding:0px;}*/
   background: linear-gradient(#5f73e9, #5f73e9);
   border-color: transparent;
 }
-/* The arrow indicating a submenu */
+
 #home-menu > ul .has-sub > a::after {
   content: "";
   position: absolute;
@@ -319,12 +319,12 @@ html, body{height:100%; margin:0px; padding:0px;}*/
   right: 10px;
   width: 0px;
   height: 0px;
-  /* Creating the arrow using borders */
+
 
   border: 4px solid transparent;
   border-left: 4px solid #d8d8d8;
 }
-/* The same arrow, but with a darker color, to create the shadow effect */
+
 #home-menu > ul .has-sub > a::before {
   content: "";
   position: absolute;
@@ -332,12 +332,12 @@ html, body{height:100%; margin:0px; padding:0px;}*/
   right: 10px;
   width: 0px;
   height: 0px;
-  /* Creating the arrow using borders */
+
 
   border: 4px solid transparent;
   border-left: 4px solid #000;
 }
-/* Changing the color of the arrow on hover */
+
 #home-menu > ul li > a:hover::after,
 #home-menu > ul li:hover > a::after {
   border-left: 4px solid #ffffff;
@@ -346,7 +346,7 @@ html, body{height:100%; margin:0px; padding:0px;}*/
 #home-menu > ul li:hover > a::before {
   border-left: 4px solid rgba(0, 0, 0, 0.3);
 }
-/* THE SUBMENUS */
+
 #home-menu > ul ul {
   position: absolute;
   left: 100%;
@@ -354,13 +354,13 @@ html, body{height:100%; margin:0px; padding:0px;}*/
   padding-left: 5px;
   opacity: 0;
   width: 170px;
-  /* The fade effect, created using an opacity transition */
+
 
   -webkit-transition: opacity 0.3s ease-in;
   -moz-transition: opacity 0.3s ease-in;
   transition: opacity 0.3s ease-in;
 }
-/* Showing the submenu when the user is hovering the parent link */
+
 #home-menu > ul li:hover > ul {
   top: 0px;
   opacity: 1;
@@ -373,12 +373,7 @@ html, body{height:100%; margin:0px; padding:0px;}*/
     width: 200px;
 }
 
-.home-folder {
-    width: 60px;
-    height: 60px;
-    display: block;
-    margin: 35px 80px;
-}
+
 
 .home-main-container {
   color: #282828;
@@ -389,17 +384,12 @@ html, body{height:100%; margin:0px; padding:0px;}*/
   position: absolute;
   top: 50px;
   left: 215px;
-  /*margin: 20px auto 25px auto;*/
   width: 75%;
   padding: 20px;
   border-radius: 10px;
 }
 
-.myGrid {
-  width: 70%;
-  text-align: left;
-  margin: 0 auto;
-}
+
 
 #home-search {
   float:right;
@@ -445,4 +435,402 @@ html, body{height:100%; margin:0px; padding:0px;}*/
   width: 100%;
   height: 60px;
   background:#5f73e9;
+}*/
+
+.home-folder {
+    width: 60px;
+    height: 60px;
+    display: block;
+    margin: 35px 80px;
+}
+
+.banner-image {
+  width: 550px;
+  height: 60px;
+  display: inline-block;
+  margin-left: 12.5%;
+}
+
+.myGrid {
+  height: 45vh;
+  width: 70%;
+  text-align: left;
+  margin: 0 auto;
+}
+
+/* -----------------------
+Base styles
+------------------------*/
+
+body
+{
+	margin: 0;
+	padding: 0;
+	color: #333;
+	background-color: white;
+	font: 1em/1.2 "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6
+{
+	margin: 0 0 .5em;
+	font-weight: 500;
+	line-height: 1;
+}
+
+h1 { font-size: 2.25em; } /* 36px */
+h2 { font-size: 1.75em; } /* 28px */
+h3 { font-size: 1.375em; } /* 22px */
+h4 { font-size: 1.125em; } /* 18px */
+h5 { font-size: 1em; } /* 16px */
+h6 { font-size: .875em; } /* 14px */
+
+p
+{
+	margin: 0 0 1.5em;
+	line-height: 1.5;
+}
+
+blockquote
+{
+	padding: 1em 2em;
+	margin: 0 0 2em;
+	border-left: 5px solid #eee;
+}
+
+hr
+{
+	height: 0;
+	margin-top: 1em;
+	margin-bottom: 2em;
+	border: 0;
+	border-top: 1px solid #ddd;
+}
+
+table
+{
+	background-color: transparent;
+	border-spacing: 0;
+	border-collapse: collapse;
+	border-top: 1px solid #ddd;
+}
+
+th, td
+{
+	padding: .5em 1em;
+	vertical-align: top;
+	text-align: left;
+	border-bottom: 1px solid #ddd;
+}
+
+a:link { color: darkblue; text-decoration: none; font-weight: bold;}
+a:visited { color: darkblue; }
+a:focus { color: orange; }
+a:hover { color: orange; }
+a:active { color: lightblue; }
+
+.footer a:link { color: white; text-decoration: none;}
+.footer a:visited { color: white; }
+.footer a:focus { color: orange; }
+.footer a:hover { color: orange; }
+.footer a:active { color: darkblue; }
+
+/* -----------------------
+Layout styles
+------------------------*/
+
+.container
+{
+	max-width: 75em;
+	margin: 0 auto;
+  text-align: center;
+}
+
+.header
+{
+	color: #fff;
+	background: black;
+	padding: 0 1.25em;
+}
+
+.header-heading { 
+  margin: 0; 
+  text-align: left;
+}
+
+.nav-bar
+{
+	background: #5f73e9;
+	padding: 0;
+}
+
+.content
+{
+	padding: 1em 1.25em;
+	background-color: #fff;
+}
+
+.footer
+{
+	color: #fff;
+	background: #000;
+	padding: 1em 1.25em;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.footer-nav
+{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+  text-align: center;
+}
+
+.footer-nav li
+{
+	display: inline;
+	margin: 0 5px;
+}
+
+/* -----------------------
+Nav
+------------------------*/
+
+.nav
+{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+  text-align: left;
+}
+
+.nav li
+{
+	display: inline;
+	margin: 0;
+}
+
+.nav a
+{
+	display: block;
+	padding: .7em 1.25em;
+	color: #fff;
+	text-decoration: none;
+	border-bottom: 1px solid gray;
+  font-weight: bold;
+}
+
+.nav a:link { color: white; }
+.nav a:visited { color: white; }
+
+/*
+.nav a:focus
+{
+	color: black;
+	background-color: white;
+}
+*/
+
+.nav a:hover
+{
+	color: orange;
+  font-weight: bold;
+}
+
+.nav a:active
+{
+	color: white;
+	background-color: lightblue;
+}
+
+/* -----------------------
+Single styles
+------------------------*/
+
+.grid-responsive { max-width: 100%; }
+
+#btn
+{
+	color: #fff !important;
+	background-color: #5f73e9;
+	border-color: #222;
+	display: inline-block;
+	padding: 1em 2em;
+	margin-bottom: 0;
+	font-weight: 400;
+	line-height: 1.2;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	border: 1px solid transparent;
+	border-radius: .2em;
+	text-decoration: none;
+}
+
+#btn:hover
+{
+	color: #fff !important;
+	background-color: orange;
+}
+
+/*
+.btn:focus
+{
+	color: #fff !important;
+	background-color: black;
+}
+*/
+
+#btn:active
+{
+	color: #fff !important;
+	background-color: darkblue;
+}
+
+#btn-team-match
+{
+  color: #fff !important;
+	background-color: #5f73e9;
+	border-color: #222;
+	display: inline-block;
+	padding: .5em .5em;
+	margin-bottom: 2.5px;
+	font-weight: 500;
+	line-height: 1.2;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	border: 1px solid transparent;
+	border-radius: .2em;
+	text-decoration: none;
+  font-size: 16px;
+}
+
+#btn-team-match:hover
+{
+	color: #fff !important;
+	background-color: orange;
+}
+
+/*
+.btn:focus
+{
+	color: #fff !important;
+	background-color: black;
+}
+*/
+
+#btn-team-match:active
+{
+	color: #fff !important;
+	background-color: darkblue;
+}
+
+#new-team-remove
+{
+  color: #fff !important;
+	background-color: orangered;
+	border-color: #222;
+	display: inline-block;
+	padding: .2em;
+	margin-bottom: 2.5px;
+  margin-left: 10px;
+	font-weight: 500;
+	line-height: 1.2;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	border: 1px solid transparent;
+	border-radius: .2em;
+	text-decoration: none;
+  font-size: 15px;
+}
+
+#new-team-remove:hover
+{
+	color: #fff !important;
+	background-color: darkred;
+}
+
+#new-team-remove:active
+{
+	color: #fff !important;
+	background-color: darkblue;
+}
+
+/*
+.btn:focus
+{
+	color: #fff !important;
+	background-color: black;
+}
+*/
+
+.table
+{
+	width: 100%;
+	max-width: 100%;
+	margin-bottom: 20px;
+}
+
+.list-unstyled
+{
+	padding-left: 0;
+	list-style: none;
+}
+
+.list-inline
+{
+	padding-left: 0;
+	margin-left: -5px;
+	list-style: none;
+}
+
+.list-inline > li
+{
+	display: inline-block;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+.team-match-input {
+  line-height: 20px;
+  font-size: 20px;
+  margin: 5px;
+}
+
+.teams-list {
+  list-style-type: none;
+  padding: 3px;
+}
+
+/* -----------------------
+Wide styles
+------------------------*/
+
+@media (min-width: 42em)
+{
+	.header { padding: 0 3em; }
+	.nav-bar { padding: 0em 3em; }
+	.content { padding: 2em 3em; }
+	.footer { padding: .75em 3em; }
+	
+	.nav li
+	{
+		display: inline;
+		margin: 0 0 0 0;
+	}
+	
+	.nav a
+	{
+		display: inline;
+		padding: 0;
+		border-bottom: 0;
+	}
 }

@@ -1,19 +1,56 @@
-<menu id='home-menu'></menu>
+		<div class="header">
+			<div class="container">
+				<h1 class="header-heading">bowleague<img class="banner-image" src="../shared/images/page-top-bowling.jpg"></img></h1>
+			</div>
+		</div>
+		<div class="nav-bar">
+			<div class="container">
+				<ul class="nav">
+<!--
+					<li><a href="#">HOME</a></li>
+					<li><a href="#">TEAMS</a></li>
+					<li><a href="#">PLAYERS</a></li>
+-->
+                    <li><a href="#/home" id="btn">HOME</a></li>
+					<li><a href="#/teams" id="btn">TEAMS</a></li>
+					<li><a href="#/players" id="btn">PLAYERS</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="content">
+			<div class="container">
+				<div class="main">
+					<h1>Team/Match Editing</h1>
+					<hr>
+                    
+					<div class="grid-responsive">
+                        <h3>Add a new match for {{ team.name }} or &nbsp<button id="btn-team-match" ng-click="removeTeam()">Remove Team</button></h3><br>
+                        <input class="team-match-input" type="text" ng-model="matches.ptsWon" placeholder="Points Won"></input>
+                        <input class="team-match-input" type="text" ng-model="matches.ptsLost" placeholder="Points Lost"></input>
+                        <input class="team-match-input" type="text" ng-model="matches.totalPins" placeholder="Total Pins"></input>
+                        <input type="submit" id="btn-team-match" value="Add Match" ng-click="updateMatch()"></input>
+                        <br>
+                        <br>
+						<br>
+						<br>
+                        <h4><strong>{{ team.name }}&nbspSTATS</strong></h4>
+                        Total Points Won: <strong>{{ team.totalPtsWon }}</strong><br>
+                        Total Points Lost: <strong>{{ team.totalPtsLost }}</strong><br>
+                        Total Pins: <strong>{{ team.totalPins }}</strong><br><br>
 
-<br>
-Add A New Match For {{ team.name }} or <button ng-click="removeTeam()">Remove Team</button><br>
-<input type="text" ng-model="matches.ptsWon" placeholder="Points Won"></input>
-<input type="text" ng-model="matches.ptsLost" placeholder="Points Lost"></input>
-<input type="text" ng-model="matches.totalPins" placeholder="Total Pins"></input>
-<input type="submit" value="Add Match" ng-click="updateMatch()"></input>
-<br>
-<br>
-{{ team.name }}&nbspStats<br>
-Total Points Won: {{ team.totalPtsWon }}<br>
-Total Points Lost: {{ team.totalPtsLost }}<br>
-Total Pins: {{ team.totalPins }}<br><br>
-
-Players:<br>
-<div ng-repeat="player in team.players">{{ player }}</div>
-<br>
-<br>
+                        <h4><strong>PLAYERS</strong></h4>
+                        <div ng-repeat="player in team.players">{{ player }}</div>
+                        <br>
+                        <br>
+                    </div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="container">
+                <ul class="footer-nav">
+                    <li>&copy; OD-Werks</li>
+                    <li><a href="mailto:odie_de_moura@hotmail.com" target="_top" class="home-email">GET IN TOUCH</a></li>
+                </ul>
+			</div>
+		</div>

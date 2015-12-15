@@ -24,11 +24,11 @@
 					<hr>
                     
 					<div class="grid-responsive">
-                        <h3>Add a new match for {{ team.name }} or &nbsp<button id="btn-team-match" ng-click="removeTeam()">Remove Team</button></h3><br>
+                        <h3>Add a new match for {{ team.name }} or &nbsp<button id="team-match-submit" ng-click="removeTeam()">Remove Team</button></h3><br>
                         <input class="team-match-input" type="text" ng-model="matches.ptsWon" placeholder="Points Won"></input>
                         <input class="team-match-input" type="text" ng-model="matches.ptsLost" placeholder="Points Lost"></input>
                         <input class="team-match-input" type="text" ng-model="matches.totalPins" placeholder="Total Pins"></input>
-                        <input type="submit" id="btn-team-match" value="Add Match" ng-click="updateMatch()"></input>
+                        <input type="submit" id="team-match-submit" value="Add Match" ng-click="updateMatch()"></input>
                         <br>
                         <br>
 						<br>

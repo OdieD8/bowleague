@@ -21,9 +21,15 @@ function teamsController($scope, $state, $stateParams, teamService) {
 	$scope.playerAdded = false;
 	
 	$scope.addNewPlayer = function() {
-		$scope.myPlayers.push($scope.newPlayer);
-		$scope.newPlayer = "";
-		$scope.playerAdded = true;
+		
+		if($scope.newPlayer === "") {
+			alert("Please enter a valid player name");
+		}
+		else {
+			$scope.myPlayers.push($scope.newPlayer);
+			$scope.newPlayer = "";
+			$scope.playerAdded = true;
+		}
 	};
 	
 	$scope.delete = function(array, index) {

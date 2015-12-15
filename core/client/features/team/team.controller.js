@@ -47,15 +47,22 @@ function teamController($scope, $state, $stateParams, teamService) {
         $scope.getTeamById(id);
 
         $scope.updateMatch = function () {
-
-                teamService.updateMatch(id, $scope.matches).then(function (data) {
-                        alert("Match Added");
-                        console.log(data);
-                        $state.go("home");
-                });
+         
+                if($scope.matches === undefined || $scope.matches.ptsWon === undefined || $scope.matches.ptsLost === undefined || $scope.matches.totalPins === undefined) {
+                        alert("Please enter required team stats");
+                }
+                else {
+                        teamService.updateMatch(id, $scope.matches).then(function (data) {
+                     
+                                alert("Match Added");
+                                console.log(data);
+                                $state.go("home");
+                        });
+                }
         };
 
         $scope.removeTeam = function () {
+                
                 var result = confirm("Are you sure you want to remove this team?");
                         if (result) {
                                 teamService.removeTeam(id).then(function (data) {

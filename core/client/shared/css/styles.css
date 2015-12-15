@@ -6,12 +6,18 @@
 //////////////////////////
 */
 
-/**{box-sizing:border-box;}
+/*{box-sizing:border-box;}*/
 
-html, body{height:100%; margin:0px; padding:0px;}*/
+html, body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+		background-image: url("../images/overlay.png"), url("../images/page-top-bowling.jpg");
+}
 
 .login-container {
-    width: 80%;
+    width: 25%;
+    height: 450px;
     margin: 60px auto 0px auto;
     padding: 20px;
     border-radius: 10px; 
@@ -43,9 +49,10 @@ html, body{height:100%; margin:0px; padding:0px;}*/
 }
 
 #login-p {
-    font-size: 1.2em;
+    font-size: 1.75em;
     text-align: center;
     color: white;
+    margin: 30px 0;
 }
 
 #sm-p {
@@ -61,7 +68,7 @@ html, body{height:100%; margin:0px; padding:0px;}*/
     left: 50%;
     top: 15%;
     margin-left: -110px;
-    margin-top: -75px;
+    margin-top: -85px;
 }
 
 #login-box input[type="text"],#login-box input[type="password"] {
@@ -157,14 +164,11 @@ html, body{height:100%; margin:0px; padding:0px;}*/
 }
 
 .login-footer {
-    width: 300px;
+    width: 220px;
     height: 100px;
-    position: relative;
-    left: 50%;
-    top: 15%;
-    margin: 100px auto auto -130px;
-    margin-left: -130px;
-    margin-top: 100px;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 15px;
 }
 
 .footer-link:link {
@@ -464,7 +468,8 @@ Base styles
 
 body
 {
-	margin: 0;
+	height: 100%;
+  margin: 0;
 	padding: 0;
 	color: #333;
 	background-color: white;
@@ -566,8 +571,14 @@ Layout styles
 
 .content
 {
+  width: 70%;
+  margin: 0 auto;
 	padding: 1em 1.25em;
 	background-color: #fff;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+	ackground-image: url("../images/overlay.png"), url("../images/page-top-bowling.jpg");
 }
 
 .footer
@@ -698,7 +709,7 @@ Single styles
 	border-color: #222;
 	display: inline-block;
 	padding: .5em .5em;
-	margin-bottom: 2.5px;
+	margin-bottom: 20px;
 	font-weight: 500;
 	line-height: 1.2;
 	text-align: center;
@@ -726,6 +737,46 @@ Single styles
 */
 
 #btn-team-match:active
+{
+	color: #fff !important;
+	background-color: darkblue;
+}
+
+#team-match-submit
+{
+  color: #fff !important;
+	background-color: #5f73e9;
+	border-color: #222;
+	display: inline-block;
+	padding: .5em .5em;
+	margin-bottom: 4px;
+	font-weight: 500;
+	line-height: 1.2;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	border: 1px solid transparent;
+	border-radius: .2em;
+	text-decoration: none;
+  font-size: 16px;
+}
+
+#team-match-submit:hover
+{
+	color: #fff !important;
+	background-color: orange;
+}
+
+/*
+.btn:focus
+{
+	color: #fff !important;
+	background-color: black;
+}
+*/
+
+#team-match-submit:active
 {
 	color: #fff !important;
 	background-color: darkblue;
@@ -803,6 +854,7 @@ Single styles
   line-height: 20px;
   font-size: 20px;
   margin: 5px;
+  margin-bottom: 20px;
 }
 
 .teams-list {

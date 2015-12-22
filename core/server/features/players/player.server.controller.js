@@ -1,4 +1,5 @@
 var Team = require("./player.server.model");
+var mongoose = require("mongoose");
 
 // /api/player/:id (GET)
 exports.getPlayer = function (req, res, next) {
@@ -23,11 +24,11 @@ exports.getPlayers = function (req, res, next) {
 // /api/player (POST)
 exports.addPlayer = function (req, res, next) {
 	
-	var player = new player(req.body);
+	var player = new Player(req.body);
 	player.save(function (err) {
 		
 		if (err) res.send(err);
-		else res.json(team);
+		else res.json(player);
 	});
 };
 

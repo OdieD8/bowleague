@@ -1,4 +1,4 @@
-		<div class="header">
+<div class="header">
 			<div class="container">
 				<h1 class="header-heading">bowleague<img class="banner-image" src="../shared/images/page-top-bowling.jpg"></img></h1>
 			</div>
@@ -6,11 +6,6 @@
 		<div class="nav-bar">
 			<div class="container">
 				<ul class="nav">
-<!--
-					<li><a href="#">HOME</a></li>
-					<li><a href="#">TEAMS</a></li>
-					<li><a href="#">PLAYERS</a></li>
--->
                     <li><a href="#/home" id="btn">HOME</a></li>
 					<li><a href="#/teams" id="btn">TEAMS</a></li>
 					<li><a href="#/players" id="btn">PLAYERS</a></li>
@@ -20,20 +15,16 @@
 		<div class="content">
 			<div class="container">
 				<div class="main">
-					<h1>Woody's Almost Classic 2015 - 2016 Teams</h1>
+					<h2>Add A New Player for {{ team.name }}</h2>
 					<hr>
-                    
-					<div class="grid-responsive">
-                       
-                        <h3><strong>SELECT TEAM TO UPDATE</strong></h3>
-                        <li class="teams-list" ng-repeat="team in teams"><a ui-sref="team({id: team._id})">{{ team.name }} </a></li><br>
-
-                        <input id="btn-team-match" type="submit" value="Add New Team" ui-sref="addTeam"></input>
-						<br>
-						<br>
-                        
-					</div>
-
+	
+					<h4>Player Name</h4>
+					
+					
+					<form ng-submit="addNewPlayer()">
+						<input class="team-match-input" ng-model="newPlayer" placeholder=""></input><br>
+					</form>
+					<button id="btn-team-match" ng-click="addNewPlayer()" ng-model="newPlayer">Add Player</button><br>
 				</div>
 			</div>
 		</div>

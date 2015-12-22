@@ -4,13 +4,18 @@
   "description": "mean stack app",
   "main": "server.js",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.14.1",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.0",
     "cors": "^2.7.1",
+    "ejs": "^2.3.4",
     "express": "^4.13.3",
     "express-session": "^1.12.1",
     "method-override": "^2.3.5",
     "mongoose": "^4.2.5",
-    "morgan": "^1.6.1"
+    "morgan": "^1.6.1",
+    "passport-local": "^1.0.0"
   },
   "devDependencies": {
     "live-server": "^0.8.2"

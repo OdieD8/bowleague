@@ -782,6 +782,46 @@ Single styles
 	background-color: darkblue;
 }
 
+#newPlayer-submit
+{
+  color: #fff !important;
+	background-color: #5f73e9;
+	border-color: #222;
+	display: inline-block;
+	padding: .5em .5em;
+	margin-bottom: 15px;
+	font-weight: 500;
+	line-height: 1.2;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	border: 1px solid transparent;
+	border-radius: .2em;
+	text-decoration: none;
+  font-size: 16px;
+}
+
+#newPlayer-submit:hover
+{
+	color: #fff !important;
+	background-color: orange;
+}
+
+/*
+.btn:focus
+{
+	color: #fff !important;
+	background-color: black;
+}
+*/
+
+#newPlayer-submit:active
+{
+	color: #fff !important;
+	background-color: darkblue;
+}
+
 #new-team-remove
 {
   color: #fff !important;

@@ -40,7 +40,9 @@
 
                         <h4><strong>PLAYERS</strong></h4>
                         <div ng-repeat="player in team.players">{{ player }}</div>
-                        <br>
+						<br>
+						<input type="submit" id="newPlayer-submit" value="Add Player" ui-sref="addPlayer({id: team._id})"></input>
+						<br>
                         <br>
                     </div>
 				</div>

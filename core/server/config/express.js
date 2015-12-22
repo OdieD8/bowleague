@@ -6,8 +6,11 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     methodOverride = require('method-override'),
     session = require('express-session'),
-    morgan = require('morgan'),
-    config = require('./config');
+    morgan = require('morgan');
+    // config = require('./config'),
+    // passport = require("passport"),
+    // flash = require("connect-flash"),
+    // cookieParser = require("cookie-parser");
 
 
 module.exports = function () {
@@ -25,16 +28,22 @@ module.exports = function () {
         {
             extended: true
         }));
+    // app.use(cookieParser());
+    
+    // app.set("view engine", "ejs");
 
     // makes sure we can use PUT and PATCH
     app.use(methodOverride());
 
     // cookies and session
-    app.use(session({
-        saveUninitialized: true,
-        resave: true,
-        secret: config.sessionSecret
-    }));
+    // app.use(session({
+    //     saveUninitialized: true,
+    //     resave: true,
+    //     secret: config.sessionSecret
+    // }));
+    // app.use(passport.initialize());
+    // app.use(passport.session());
+    // app.use(flash());
 
 
     // MIDDLEWARE THAT RUNS ONLY IN DEVELOPMENT
@@ -47,6 +56,7 @@ module.exports = function () {
 
     // HERE WE CONFIGURE THE ROUTES
     require('../features/teams/team.server.route')(app);
+    // require("../features/users/user.server.route")(app, passport);
 
     // THIS WILL BE THE ROOT OF THE ANGULAR APP
     // the route is relative to the root of the project

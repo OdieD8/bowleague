@@ -8,12 +8,12 @@ var Player = new Schema({
 		gm1: { type: Number, required: true },
 		gm2: { type: Number, required: true },
 		gm3: { type: Number, required: true },
-		Series: { type: Number, required: true }	
+		Series: { type: Number, required: true },
+		_id: false,
+		id: false	
 	}],
 	average: { type: Number },
-	date: { type: Date, default: new Date() },
-	_id: false,
-	id: false
+	date: { type: Date, default: new Date() }
 });
 
 module.exports = mongoose.model("Player", Player);

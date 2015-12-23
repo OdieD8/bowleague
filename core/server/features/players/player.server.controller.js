@@ -1,4 +1,4 @@
-var Team = require("./player.server.model");
+var Player = require("./player.server.model");
 var mongoose = require("mongoose");
 
 // /api/player/:id (GET)

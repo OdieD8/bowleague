@@ -1,8 +1,8 @@
 var app = angular.module('app');
 
-app.controller('playersController', ['$scope', '$state', '$stateParams', 'teamService', playersController]);
+app.controller('playersController', ['$scope', '$state', '$stateParams', 'teamService', 'playerService', playersController]);
 
-function playersController($scope, $state, $stateParams, teamService) {
+function playersController($scope, $state, $stateParams, teamService, playerService) {
 	
 	var id = $stateParams.id;
 	
@@ -17,18 +17,25 @@ function playersController($scope, $state, $stateParams, teamService) {
 	
 	$scope.addNewPlayer = function () {
 		
-		if($scope.newPlayer === "") {
-			alert("Please enter a valid player name");
+		$scope.playerByTeam = {
+			name: $scope.newPlayer.name,
+			team: id
+		};
+		
+		$scope.player = {
+			players: $scope.newPlayer.name
 		}
-		else {
-			playerService.addNewPlayer($scope.newPlayer).then(function (data) {
-				$scope.newPlayer.name = $scope.newPlayer;
-				console.log(data);
-				$state.go("team({id: team._id})");
-				alert($scope.newPlayer.name + " added");
-			})
-			$scope.newPlayer = "";
-		}
+		
+		playerService.addNewPlayer($scope.playerByTeam).then(function (data) {
+		
+			$state.go("home");
+			alert($scope.playerByTeam.name + " added");
+		});
+		
+		teamService.updatePlayer(id, $scope.player).then(function (data) {
+			
+			console.log(data);
+		});
 	};
 	
 	

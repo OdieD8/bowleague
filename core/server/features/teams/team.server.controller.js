@@ -42,6 +42,16 @@ exports.updateMatch = function (req, res, next) {
 	});
 };
 
+// /api/teamPlayer/:id (PUT)
+exports.updatePlayer = function (req, res, next) {
+	
+	Team.findByIdAndUpdate(req.params.id, {$push: {'players':req.body.players}}, function (err, results) {
+		
+		if (err) res.status(500).send(err);
+		else res.json(results);
+	});
+};
+
 // /api/team/:id (DELETE)
 exports.removeTeam = function (req, res, next) {
 	

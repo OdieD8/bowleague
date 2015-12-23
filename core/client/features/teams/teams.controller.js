@@ -43,7 +43,7 @@ function teamsController($scope, $state, $stateParams, teamService) {
 	$scope.postNewTeam = function() {
 		$scope.newTeam.players = $scope.myPlayers;
 		teamService.postNewTeam($scope.newTeam).then(function (data) {
-			console.log(data);
+	
 			$state.go("home");
 			alert($scope.newTeam.name + " added");
 			

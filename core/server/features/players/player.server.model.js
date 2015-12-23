@@ -5,10 +5,10 @@ var Player = new Schema({
 	name: { type: String, lowercase: true, required: true },
 	team: { type: Schema.Types.ObjectId, ref: 'Team'},
 	games: [{
-		gm1: { type: Number, required: true },
-		gm2: { type: Number, required: true },
-		gm3: { type: Number, required: true },
-		Series: { type: Number, required: true },
+		gm1: { type: Number },
+		gm2: { type: Number },
+		gm3: { type: Number },
+		Series: { type: Number },
 		_id: false,
 		id: false	
 	}],

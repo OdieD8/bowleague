@@ -1,4 +1,4 @@
-var Ctrl = require("./team.server.controller");
+var Ctrl = require("./player.server.controller");
 
 module.exports = function (app) {
 	
@@ -9,7 +9,7 @@ module.exports = function (app) {
 		.put(Ctrl.updateGames);
 
 	app.route("/api/player/")
-		.post(Ctrl.adPlayer)
+		.post(Ctrl.addPlayer)
 		
 	app.route("/api/players")
 		.get(Ctrl.getPlayers);

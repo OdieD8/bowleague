@@ -15,16 +15,14 @@
 		<div class="content">
 			<div class="container">
 				<div class="main">
-					<h2>Add A New Player for {{ team.name }}</h2>
+					<h2>Add New Players for {{ team.name }}</h2>
 					<hr>
 	
 					<h4>Player Name</h4>
-					
-					
 					<form ng-submit="addNewPlayer()">
-						<input class="team-match-input" ng-model="newPlayer" placeholder=""></input><br>
+						<input class="team-match-input" ng-model="newPlayer.name" placeholder=""></input><br>
 					</form>
-					<button id="btn-team-match" ng-click="addNewPlayer()" ng-model="newPlayer">Add Player</button><br>
+					<button id="btn-team-match" ng-click="addNewPlayer()">Add Player</button><br>
 				</div>
 			</div>
 		</div>

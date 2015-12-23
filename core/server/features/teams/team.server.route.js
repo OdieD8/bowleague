@@ -14,5 +14,8 @@ module.exports = function (app) {
 		
 	app.route("/api/teams")
 		.get(Ctrl.getTeams);
+		
+	app.route("/api/teamPlayer/:id")
+		.put(Ctrl.updatePlayer);
 				
 };

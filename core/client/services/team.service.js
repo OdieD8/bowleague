@@ -58,6 +58,19 @@ function teamService($q, $http) {
             });
     };
     
+    
+    this.updatePlayer = function (id, player) {
+
+        return $http.put('/api/teamPlayer/' + id, player)
+            .then(function (response) {
+                return response.data;
+                console.log(response.data);
+            }, function (error) {
+                console.log(error);
+                return error;
+            });
+    };
+    
     this.removeTeam = function (id) {
         
         return $http.delete('/api/team/' + id)

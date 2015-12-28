@@ -52,4 +52,9 @@ function routing($stateProvider, $urlRouterProvider) {
             controller: 'playersController'
         })      
    
+        .state('Player', {
+            url: '/Player/:id',
+            templateUrl: './features/player/player.template.html',
+            controller: 'playerController'
+        })  
 };

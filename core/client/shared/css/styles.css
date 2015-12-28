@@ -578,7 +578,7 @@ Layout styles
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-	ackground-image: url("../images/overlay.png"), url("../images/page-top-bowling.jpg");
+	/*background-image: url("../images/overlay.png"), url("../images/page-top-bowling.jpg");*/
 }
 
 .footer

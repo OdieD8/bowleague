@@ -1,19 +1,10 @@
 var app = angular.module('app');
 
-app.controller('playersController', ['$scope', '$filter', 'uiGridConstants', '$state', '$stateParams', 'teamService', 'playerService', playersController]);
+app.controller('playersController', ['$scope', '$filter', '$state', '$stateParams', 'teamService', 'playerService', 'uiGridConstants', playersController]);
 
-function playersController($scope, $state, $filter, uiGridConstants, $stateParams, teamService, playerService) {
+function playersController($scope, $state, $filter, $stateParams, teamService, playerService, uiGridConstants) {
 	
 	var id = $stateParams.id;
-	
-	// $scope.getTeamById = function (id) {
-	// 	teamService.getTeamById(id).then(function (data) {
-			
-	// 		$scope.team = data;
-	// 	});
-	// }
-	
-	// $scope.getTeamById(id);
 	
 	$scope.addNewPlayer = function () {
 		
@@ -62,7 +53,7 @@ function playersController($scope, $state, $filter, uiGridConstants, $stateParam
                 name: 'Team',
                 field: 'team.name',  
                 sort: {
-                    direction: uiGridConstants.DESC,
+                    direction: uiGridConstants.ASC,
                     priority: 0
                 },
                 enableFiltering: true

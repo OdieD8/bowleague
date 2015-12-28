@@ -9,7 +9,7 @@ function teamsController($scope, $state, $stateParams, teamService) {
         teamService.getTeams()
             .then(function (data) {
 				$scope.teams = data;
-		
+				
 		});
 	
 	};

@@ -1,19 +1,19 @@
 var app = angular.module('app');
 
-app.controller('playersController', ['$scope', '$state', '$stateParams', 'teamService', 'playerService', playersController]);
+app.controller('playersController', ['$scope', '$filter', 'uiGridConstants', '$state', '$stateParams', 'teamService', 'playerService', playersController]);
 
-function playersController($scope, $state, $stateParams, teamService, playerService) {
+function playersController($scope, $state, $filter, uiGridConstants, $stateParams, teamService, playerService) {
 	
 	var id = $stateParams.id;
 	
-	$scope.getTeamById = function (id) {
-		teamService.getTeamById(id).then(function (data) {
+	// $scope.getTeamById = function (id) {
+	// 	teamService.getTeamById(id).then(function (data) {
 			
-			$scope.team = data;
-		});
-	}
+	// 		$scope.team = data;
+	// 	});
+	// }
 	
-	$scope.getTeamById(id);
+	// $scope.getTeamById(id);
 	
 	$scope.addNewPlayer = function () {
 		
@@ -38,6 +38,40 @@ function playersController($scope, $state, $stateParams, teamService, playerServ
 		});
 	};
 	
+	$scope.getPlayers = function () {
+		
+		playerService.getPlayers()
+			.then(function (data) {
+				$scope.players = data;
+
+		});
+	};
 	
+	 $scope.gridOptions = {
+        data: "players",
+        enableFiltering: true,
+        enableSorting: true,
+        columnDefs: [
+            { 
+                name: 'Name',
+                field: 'name',
+                cellTemplate: '<div class="ui-grid-cell-contents"><a href="#/player/{{row.entity._id}}">{{ COL_FIELD }}</a></div>',
+                enableFiltering: true,
+            },
+            { 
+                name: 'Team',
+                field: 'team.name',  
+                sort: {
+                    direction: uiGridConstants.DESC,
+                    priority: 0
+                },
+                enableFiltering: true
+            }
+            // { name: 'Points Lost', field: 'totalPtsLost', enableFiltering: false},
+            // { name: 'Total Pins', field: 'totalPins', enableFiltering: false}
+        ]
+    };
+	
+	$scope.getPlayers();
 	
 };

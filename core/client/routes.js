@@ -40,6 +40,12 @@ function routing($stateProvider, $urlRouterProvider) {
             controller: 'teamsController'
         })
         
+        .state('players', {
+            url: '/players',
+            templateUrl: './features/players/players.template.html',
+            controller: 'playersController'
+        })
+        
         .state('addPlayer', {
             url: '/addPlayer/:id',
             templateUrl: './features/players/addPlayer.template.html',

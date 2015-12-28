@@ -902,6 +902,20 @@ Single styles
   padding: 3px;
 }
 
+.players-list {
+  list-style-type: none;
+  padding: 3px;
+  color: darkblue;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.players-list a:visited { color: darkblue; }
+.players-list a:focus { color: orange; }
+.players-list a:hover { color: orange; }
+.players-list a:active { color: lightblue; }
+
 /* -----------------------
 Wide styles
 ------------------------*/

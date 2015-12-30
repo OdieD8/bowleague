@@ -12,7 +12,7 @@ function playerController($scope, $state, $stateParams, playerService) {
 			var counter = 0;
 			
 			//Game Ones
-			var gamesOneArr = data.games.gm1.map(function (game) {
+			var gamesOneArr = data.games.map(function (game) {
 				return game.gm1;
 			});
 			var totalGm1 = 0;
@@ -23,7 +23,7 @@ function playerController($scope, $state, $stateParams, playerService) {
 			data.totalGm1 = totalGm1;
 			
 			//Game Twos
-			var gamesTwoArr = data.games.gm2.map(function (game) {
+			var gamesTwoArr = data.games.map(function (game) {
 				return game.gm2;
 			});
 			var totalGm2 = 0;
@@ -34,7 +34,7 @@ function playerController($scope, $state, $stateParams, playerService) {
 			data.totalGm2 = totalGm2;
 			
 			//Game Threes
-			var gamesThreeArr = data.games.gm3.map(function (game) {
+			var gamesThreeArr = data.games.map(function (game) {
 				return game.gm3;
 			});
 			var totalGm3 = 0;
@@ -46,11 +46,11 @@ function playerController($scope, $state, $stateParams, playerService) {
 			
 			//Average
 			var playerAverage = (data.totalGm1 + data.totalGm2 + data.totalGm3) / counter;
-			data.average = playerAverage;
+			data.average = Math.round(playerAverage * 100) / 100;
 			
 			//Total Pins
 			var totalPins = data.totalGm1 + data.totalGm2 + data.totalGm3;
-			data.totaPins = totalPins;
+			data.totalPins = totalPins;
 
 			data.gamesPlayed = counter;
 
@@ -65,7 +65,7 @@ function playerController($scope, $state, $stateParams, playerService) {
 		
 		console.log($scope.games);
 		
-		var series = $scope.games.gm1 + $scope.games.gm2 + $scope.games.gm3;
+		var series = parseInt($scope.games.gm1) + parseInt($scope.games.gm2) + parseInt($scope.games.gm3);
 		$scope.games.series = series;
 
 		if ($scope.games === undefined || $scope.games.gm1 === undefined || $scope.games.gm2 === undefined || $scope.games.gm3 === undefined) {

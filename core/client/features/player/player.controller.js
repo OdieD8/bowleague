@@ -62,13 +62,18 @@ function playerController($scope, $state, $stateParams, playerService) {
 	$scope.getPlayerById(id);
 
 	$scope.updateGames = function() {
+		
+		console.log($scope.games);
+		
+		var series = $scope.games.gm1 + $scope.games.gm2 + $scope.games.gm3;
+		$scope.games.series = series;
 
-		if ($scope.games === undefined || $scope.games.gameOne === undefined || $scope.games.gameTwo === undefined || $scope.games.gameThree === undefined) {
+		if ($scope.games === undefined || $scope.games.gm1 === undefined || $scope.games.gm2 === undefined || $scope.games.gm3 === undefined) {
 			alert("Please enter required player stats");
 		}
 		else {
 			playerService.updateGames(id, $scope.games).then(function (data) {
-
+				
 				alert("Games Added");
 				console.log(data);
 				$state.go("home");

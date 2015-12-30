@@ -8,7 +8,7 @@ var Player = new Schema({
 		gm1: { type: Number },
 		gm2: { type: Number },
 		gm3: { type: Number },
-		Series: { type: Number },
+		series: { type: Number },
 		_id: false,
 		id: false	
 	}],

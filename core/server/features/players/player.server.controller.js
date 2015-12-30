@@ -37,7 +37,7 @@ exports.addPlayer = function (req, res, next) {
 // /api/player/:id (PUT)
 exports.updateGames = function (req, res, next) {
 	
-	Player.findByIdAndUpdate(req.params.id, {$push: {'name':req.body}}, function (err, results) {
+	Player.findByIdAndUpdate(req.params.id, {$push: {'games':req.body}}, function (err, results) {
 		
 		if (err) res.status(500).send(err);
 		else res.json(results);

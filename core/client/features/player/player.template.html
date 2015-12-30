@@ -20,28 +20,23 @@
 		<div class="content">
 			<div class="container">
 				<div class="main">
-					<h1>Player Stats Updating</h1>
+					<h1>Player/Match Editing</h1>
 					<hr>
                     
 					<div class="grid-responsive">
-                        <h3>Add a new match for {{ player.name }} or &nbsp<button id="team-match-submit" ng-click="removeTeam()">Remove Team</button></h3><br>
-                        <input class="team-match-input" type="text" ng-model="matches.ptsWon" placeholder="Points Won"></input>
-                        <input class="team-match-input" type="text" ng-model="matches.ptsLost" placeholder="Points Lost"></input>
-                        <input class="team-match-input" type="text" ng-model="matches.totalPins" placeholder="Total Pins"></input>
-                        <input type="submit" id="team-match-submit" value="Add Match" ng-click="updateMatch()"></input>
+                        <h3>Add a new match for {{ player.name }} or &nbsp<button id="team-match-submit" ng-click="removePlayer()">Remove Player</button></h3><br>
+                        <input class="team-match-input" type="text" ng-model="games.gameOne" placeholder="Game One"></input>
+                        <input class="team-match-input" type="text" ng-model="games.gameTwo" placeholder="Game Two"></input>
+                        <input class="team-match-input" type="text" ng-model="games.gameThree" placeholder="Game Three"></input>
+                        <input type="submit" id="team-match-submit" value="Add Match" ng-click="updateGames()"></input>
                         <br>
                         <br>
 						<br>
 						<br>
-                        <h4><strong>{{ team.name }}&nbspSTATS</strong></h4>
-                        Total Points Won: <strong>{{ team.totalPtsWon }}</strong><br>
-                        Total Points Lost: <strong>{{ team.totalPtsLost }}</strong><br>
-                        Total Pins: <strong>{{ team.totalPins }}</strong><br><br>
-
-                        <h4><strong>PLAYERS</strong></h4>
-                        <div ng-repeat="player in team.players">{{ player }}</div>
-						<br>
-						<input type="submit" id="newPlayer-submit" value="Add Player" ui-sref="addPlayer({id: team._id})"></input>
+                        <h4><strong>{{ player.name }}&nbspSTATS</strong></h4>
+                        Total Games Played: <strong>{{ player.gamesPlayed }}</strong><br>
+                        Average: <strong>{{ player.average }}</strong><br>
+                        Total Pins: <strong>{{ player.totalPins }}</strong><br><br>
 						<br>
                         <br>
 						<br>

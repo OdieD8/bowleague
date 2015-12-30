@@ -43,4 +43,18 @@ function playerService($q, $http) {
 			});
 	};
 	
+	this.updateGames = function(id, games) {
+		
+		return $http.put('/api/player/' + id, games)
+			.then(function(response) {
+				
+				return response.data;
+				console.log(response.data);
+				
+			}, function(error) {
+				console.log(error);
+				return error;
+			});
+	};
+	
 };

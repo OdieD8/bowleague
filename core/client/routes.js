@@ -52,8 +52,8 @@ function routing($stateProvider, $urlRouterProvider) {
             controller: 'playersController'
         })      
    
-        .state('Player', {
-            url: '/Player/:id',
+        .state('player', {
+            url: '/player/:id',
             templateUrl: './features/player/player.template.html',
             controller: 'playerController'
         })  

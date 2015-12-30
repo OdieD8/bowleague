@@ -15,7 +15,7 @@ function teamController($scope, $state, $stateParams, teamService) {
                                 return match.ptsWon;
                         });
                         var totalPtsWon = 0;
-                        ptsWonArr.forEach(function (e) {
+                        ptsWonArr.forEach(function(e) {
                                 totalPtsWon += e;
                         });
                         data.totalPtsWon = totalPtsWon;
@@ -25,7 +25,7 @@ function teamController($scope, $state, $stateParams, teamService) {
                                 return match.ptsLost;
                         });
                         var totalPtsLost = 0;
-                        ptsLostArr.forEach(function (e) {
+                        ptsLostArr.forEach(function(e) {
                                 totalPtsLost += e;
                         });
                         data.totalPtsLost = totalPtsLost;
@@ -35,7 +35,7 @@ function teamController($scope, $state, $stateParams, teamService) {
                                 return match.totalPins;
                         });
                         var totalPins = 0;
-                        totalPinsArr.forEach(function (e) {
+                        totalPinsArr.forEach(function(e) {
                                 totalPins += e;
                         });
                         data.totalPins = totalPins;
@@ -46,13 +46,13 @@ function teamController($scope, $state, $stateParams, teamService) {
 
         $scope.getTeamById(id);
 
-        $scope.updateMatch = function () {
+        $scope.updateMatch = function() {
 
                 if ($scope.matches === undefined || $scope.matches.ptsWon === undefined || $scope.matches.ptsLost === undefined || $scope.matches.totalPins === undefined) {
                         alert("Please enter required team stats");
                 }
                 else {
-                        teamService.updateMatch(id, $scope.matches).then(function (data) {
+                        teamService.updateMatch(id, $scope.matches).then(function(data) {
 
                                 alert("Match Added");
                                 console.log(data);

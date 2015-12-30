@@ -46,7 +46,7 @@ function playerController($scope, $state, $stateParams, playerService) {
 			
 			//Average
 			var playerAverage = (data.totalGm1 + data.totalGm2 + data.totalGm3) / counter;
-			data.average = Math.round(playerAverage * 100) / 100;
+			data.average = Math.round(playerAverage * 1) / 1;
 			
 			//Total Pins
 			var totalPins = data.totalGm1 + data.totalGm2 + data.totalGm3;
@@ -55,6 +55,8 @@ function playerController($scope, $state, $stateParams, playerService) {
 			data.gamesPlayed = counter;
 
 			$scope.player = data;
+			
+			playerService.updateAverage(id, data);
 
 		});
 	};
@@ -62,21 +64,20 @@ function playerController($scope, $state, $stateParams, playerService) {
 	$scope.getPlayerById(id);
 
 	$scope.updateGames = function() {
-		
-		console.log($scope.games);
-		
-		var series = parseInt($scope.games.gm1) + parseInt($scope.games.gm2) + parseInt($scope.games.gm3);
-		$scope.games.series = series;
 
 		if ($scope.games === undefined || $scope.games.gm1 === undefined || $scope.games.gm2 === undefined || $scope.games.gm3 === undefined) {
 			alert("Please enter required player stats");
 		}
 		else {
+			
+			var series = parseInt($scope.games.gm1) + parseInt($scope.games.gm2) + parseInt($scope.games.gm3);
+			$scope.games.series = series;
 			playerService.updateGames(id, $scope.games).then(function (data) {
 				
 				alert("Games Added");
 				console.log(data);
-				$state.go("home");
+				$state.go("players");
+				
 			});
 		}
 	};

@@ -57,4 +57,18 @@ function playerService($q, $http) {
 			});
 	};
 	
+	this.updateAverage = function(id, average) {
+		
+		return $http.put('/api/players/' + id, average)
+			.then(function(response) {
+				
+				return response.data;
+				console.log(response.data);
+				
+			}, function(error) {
+				console.log(error);
+				return error;
+			});
+	};
+	
 };

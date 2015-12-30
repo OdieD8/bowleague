@@ -33,6 +33,7 @@ function playersController($scope, $state, $filter, $stateParams, teamService, p
 		
 		playerService.getPlayers()
 			.then(function (data) {
+				
 				$scope.players = data;
 
 		});
@@ -50,15 +51,19 @@ function playersController($scope, $state, $filter, $stateParams, teamService, p
                 enableFiltering: true,
             },
             { 
-                name: 'Team',
-                field: 'team.name',  
-                sort: {
-                    direction: uiGridConstants.ASC,
+				name: 'Average',
+				field: 'average',
+				sort: {
+                	direction: uiGridConstants.DESC,
                     priority: 0
                 },
+				enableFiltering: false
+			},
+			{ 
+                name: 'Team',
+                field: 'team.name',  
                 enableFiltering: true
             }
-            // { name: 'Points Lost', field: 'totalPtsLost', enableFiltering: false},
             // { name: 'Total Pins', field: 'totalPins', enableFiltering: false}
         ]
     };

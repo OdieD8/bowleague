@@ -1,9 +1,9 @@
 var app = angular.module('app');
 
 
-app.controller('teamController', ['$scope', '$state', '$stateParams', 'teamService', teamController]);
+app.controller('teamController', ['$scope', '$state', '$stateParams', 'teamService', 'playerService', teamController]);
 
-function teamController($scope, $state, $stateParams, teamService) {
+function teamController($scope, $state, $stateParams, teamService, playerService) {
 
         var id = $stateParams.id;
 
@@ -41,6 +41,13 @@ function teamController($scope, $state, $stateParams, teamService) {
                         data.totalPins = totalPins;
 
                         $scope.team = data;
+                        
+                        playerService.getPlayersByTeamId(id).then(function (data) {
+                                
+                                console.log(data);
+                                $scope.team.players = data;
+                        });
+                        
                 });
         };
 
@@ -67,8 +74,11 @@ function teamController($scope, $state, $stateParams, teamService) {
                 if (result) {
                         teamService.removeTeam(id).then(function (data) {
                                 console.log(data);
-                                $state.go("home");
 
+                        });
+                        playerService.removePlayersByTeamId(id).then(function (data) {
+                                
+                                $state.go("home");
                         });
                 }
         };

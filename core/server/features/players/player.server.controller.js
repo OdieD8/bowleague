@@ -44,6 +44,7 @@ exports.updateGames = function (req, res, next) {
 	});
 };
 
+// /api/players/:id (PUT)
 exports.addAverage = function (req, res, next) {
 	
 	Player.findByIdAndUpdate(req.params.id, {average: req.body.average}, function (err, results) {
@@ -51,4 +52,34 @@ exports.addAverage = function (req, res, next) {
 		if (err) res.status(500).send(err);
 		else res.json(results);
 	});	
+};
+
+// /api/player/:id (DELETE)
+exports.removePlayer = function (req, res, next) {
+	
+	Player.findByIdAndRemove(req.params.id, function (err, results) {
+		
+		if (err) return res.status(500).send(err);
+		else res.json(results);
+	});
+};
+
+// /api/players/:id (GET)
+exports.getPlayersByTeam = function (req, res, next) {
+	
+	Player.find({ team: req.params.id }, function (err, results) {
+		
+		if (err) res.status(500).send(err);
+		else res.json(results);
+	});
+};
+
+// /api/players/:id (DELETE)
+exports.removePlayersByTeam = function (req, res, next) {
+	
+	Player.remove({ team: req.params.id }, function (err, results) {
+		
+		if (err) res.status(500).send(err);
+		else res.json(results);
+	});
 };

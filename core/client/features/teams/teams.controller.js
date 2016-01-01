@@ -1,8 +1,8 @@
 var app = angular.module('app');
 
-app.controller('teamsController', ['$scope', '$state', '$stateParams', 'teamService', teamsController]);
+app.controller('teamsController', ['$scope', '$state', '$stateParams', 'teamService', 'playerService', teamsController]);
 
-function teamsController($scope, $state, $stateParams, teamService) {
+function teamsController($scope, $state, $stateParams, teamService, playerService) {
 	
 	$scope.getTeams = function () {
         
@@ -16,37 +16,39 @@ function teamsController($scope, $state, $stateParams, teamService) {
 	
 	$scope.getTeams();
 	
-	$scope.myPlayers = [];
+	// $scope.myPlayers = [];
 	
-	$scope.playerAdded = false;
+	// $scope.playerAdded = false;
 	
-	$scope.addNewPlayer = function() {
+	// $scope.addNewPlayer = function() {
 		
-		if($scope.newPlayer === "") {
-			alert("Please enter a valid player name");
-		}
-		else {
-			$scope.myPlayers.push($scope.newPlayer);
-			$scope.newPlayer = "";
-			$scope.playerAdded = true;
-		}
-	};
+	// 	if($scope.newPlayer === "") {
+	// 		alert("Please enter a valid player name");
+	// 	}
+	// 	else {
+	// 		$scope.myPlayers.push($scope.newPlayer);
+	// 		$scope.newPlayer = "";
+	// 		$scope.playerAdded = true;
+	// 	}
+	// };
 	
-	$scope.delete = function(array, index) {
+	// $scope.delete = function(array, index) {
 
-		if ($scope.myPlayers.length < 2) {
-			$scope.playerAdded = false;
-		}
-		array.splice(index, 1);
-	};
+	// 	if ($scope.myPlayers.length < 2) {
+	// 		$scope.playerAdded = false;
+	// 	}
+	// 	array.splice(index, 1);
+	// };
+	
+	$scope.playerAdded = true;
 	
 	$scope.postNewTeam = function() {
-		$scope.newTeam.players = $scope.myPlayers;
+		// $scope.newTeam.players = $scope.myPlayers;
 		teamService.postNewTeam($scope.newTeam).then(function (data) {
 	
 			$state.go("home");
 			alert($scope.newTeam.name + " added");
 			
-		})
+		});
 	}
 };

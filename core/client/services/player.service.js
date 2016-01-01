@@ -71,4 +71,44 @@ function playerService($q, $http) {
 			});
 	};
 	
+	this.removePlayer = function(id) {
+		
+		return $http.delete('/api/player/' + id)
+			.then(function(response) {
+				
+				console.log(response);
+				return "Player Removed";
+				
+			}, function(error) {
+				console.log(error);
+				return error;
+			});
+	};
+	
+	this.getPlayersByTeamId = function(id) {
+		
+		return $http.get('/api/players/' + id)
+			.then(function(response) {
+				
+				return response.data;
+				console.log(response.data);
+				
+			}, function(error) {
+				console.log(error);
+				return error;
+			});
+	};
+	
+	this.removePlayersByTeamId = function(id) {
+		
+		return $http.delete('/api/players/' + id)
+			.then(function(response) {
+				
+				console.log(response);
+			}, function(error) {
+				console.log(error);
+				return error;
+			});
+	};
+	
 };

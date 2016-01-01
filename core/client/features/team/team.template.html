@@ -39,7 +39,7 @@
                         Total Pins: <strong>{{ team.totalPins }}</strong><br><br>
 
                         <h4><strong>PLAYERS</strong></h4>
-                        <div ng-repeat="player in team.players">{{ player }}</div>
+                        <div ng-repeat="player in team.players track by $index"><a ui-sref="player({ id: player._id })">{{ player.name }}</a></div>
 						<br>
 						<input type="submit" id="newPlayer-submit" value="Add Player" ui-sref="addPlayer({id: team._id})"></input>
 						<br>

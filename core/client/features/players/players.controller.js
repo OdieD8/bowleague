@@ -1,6 +1,6 @@
 var app = angular.module('app');
 
-app.controller('playersController', ['$scope', '$filter', '$state', '$stateParams', 'teamService', 'playerService', 'uiGridConstants', playersController]);
+app.controller('playersController', ['$scope', '$state', '$filter', '$stateParams', 'teamService', 'playerService', 'uiGridConstants', playersController]);
 
 function playersController($scope, $state, $filter, $stateParams, teamService, playerService, uiGridConstants) {
 	
@@ -13,20 +13,28 @@ function playersController($scope, $state, $filter, $stateParams, teamService, p
 			team: id
 		};
 		
-		$scope.player = {
-			players: $scope.newPlayer.name
-		}
+		// $scope.player = {
+		// 	players: $scope.newPlayer.name
+		// }
+		
+		$scope.newPlayer.name = "";
 		
 		playerService.addNewPlayer($scope.playerByTeam).then(function (data) {
 		
-			$state.go("home");
-			alert($scope.playerByTeam.name + " added");
+			var result = confirm("Add Another Player?");
+			if (result) {
+				$state.go("addPlayer", { id: id });
+			}
+			else {
+				$state.go("home");
+				alert($scope.playerByTeam.name + " added");
+			}
 		});
 		
-		teamService.updatePlayer(id, $scope.player).then(function (data) {
+		// teamService.updatePlayer(id, $scope.player).then(function (data) {
 			
-			console.log(data);
-		});
+		// 	console.log(data);
+		// });
 	};
 	
 	$scope.getPlayers = function () {

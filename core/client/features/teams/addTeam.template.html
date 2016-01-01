@@ -23,26 +23,19 @@
 					<h1>Add A New Team</h1>
 					<hr>
 					
-					<h4>Team Name&nbsp&nbsp</h4><input type="text" class="team-match-input" ng-model="newTeam.name" placeholder=""></input><br><br>
-					<h4>Players</h4>
-					<!--<input type="text" ng-model="players.p1" placeholder="Player 1" required></input><br>
-					<input type="text" ng-model="players.p2" placeholder="Player 2" required></input><br>
-					<input type="text" ng-model="players.p3" placeholder="Player 3" required></input><br>
-					<input type="text" ng-model="players.p4" placeholder="Player 4" required></input><br>
-					<input type="text" ng-model="players.p5" placeholder="Player 5" required></input><br>
-					<input type="text" ng-model="players.p6" placeholder="Player 6"></input><br>
-					<input type="text" ng-model="players.p7" placeholder="Player 7"></input><br>
-					<input type="text" ng-model="players.p8" placeholder="Player 8"></input><br>
-					<input type="text" ng-model="players.p9" placeholder="Player 9"></input><br>-->
+					<h4>Team Name&nbsp&nbsp</h4>
+					<form ng-submit="postNewTeam()">
+						<input type="text" class="team-match-input" ng-model="newTeam.name" placeholder=""></input><br>
+					</form>
+					<!--<h4>Players</h4>-->
 					
-					
-					<form ng-submit="addNewPlayer()">
+					<!--<form ng-submit="addNewPlayer()">
 						<input class="team-match-input" ng-model="newPlayer" placeholder=""></input><br>
 					</form>
-					<button id="btn-team-match" ng-click="addNewPlayer()">Add Player</button><br>
-					<ul>
-						<li class="teams-list" ng-repeat="player in myPlayers" >{{ player }}<button id="new-team-remove" ng-click="delete(myPlayers, $index)">Remove</button></li>
-					</ul>
+					<button id="btn-team-match" ng-click="addNewPlayer()">Add Player</button><br>-->
+					<!--<ul>
+						<li class="teams-list" ng-repeat="player in myPlayers track by $index" >{{ player }}<button id="new-team-remove" ng-click="delete(myPlayers, $index)">Remove</button></li>
+					</ul>-->
 					<input id="btn-team-match" ng-show="playerAdded" type="submit" value="SUBMIT" ng-click="postNewTeam()"></input><br>
 				</div>
 			</div>

@@ -46,7 +46,15 @@ function playerController($scope, $state, $stateParams, playerService) {
 			
 			//Average
 			var playerAverage = (data.totalGm1 + data.totalGm2 + data.totalGm3) / counter;
-			data.average = Math.round(playerAverage * 1) / 1;
+			// data.average = Math.round(playerAverage * 1) / 1;
+			
+			if(playerAverage === NaN) {
+				data.average = 0;
+			}
+			 
+			if(playerAverage) {
+				data.average = Math.round(playerAverage * 1) / 1;
+			}
 			
 			//Total Pins
 			var totalPins = data.totalGm1 + data.totalGm2 + data.totalGm3;
@@ -82,6 +90,16 @@ function playerController($scope, $state, $stateParams, playerService) {
 		}
 	};
 	
-	//Need function to remove player from team - removePlayer()
+	$scope.removePlayer = function() {
+		
+		var result = confirm("Are you sure you want ot remove this player?");
+		if (result) {
+			playerService.removePlayer(id).then(function (data) {
+				console.log(data);
+				$state.go("home");
+				
+			});
+		}
+	};
 	
 };

@@ -1,16 +1,17 @@
 // EXPRESS CONFIGURATION FILE
 
 // node libraries and configuration file
-var express = require('express'),
-    cors = require('cors'),
-    bodyParser = require('body-parser'),
-    methodOverride = require('method-override'),
-    session = require('express-session'),
-    morgan = require('morgan');
-    // config = require('./config'),
-    // passport = require("passport"),
-    // flash = require("connect-flash"),
-    // cookieParser = require("cookie-parser");
+var express = require('express');
+var cors = require('cors');
+var bodyParser = require('body-parser');
+var methodOverride = require('method-override');
+var session = require('express-session');
+var morgan = require('morgan');
+var port = process.env.PORT || 8500;
+var config = require('./config');
+var passport = require("passport");
+var User = require("../features/users/user.server.model");
+var jwt = require("jwt-simple");
 
 
 module.exports = function () {
@@ -28,23 +29,9 @@ module.exports = function () {
         {
             extended: true
         }));
-    // app.use(cookieParser());
-    
-    // app.set("view engine", "ejs");
 
     // makes sure we can use PUT and PATCH
     app.use(methodOverride());
-
-    // cookies and session
-    // app.use(session({
-    //     saveUninitialized: true,
-    //     resave: true,
-    //     secret: config.sessionSecret
-    // }));
-    // app.use(passport.initialize());
-    // app.use(passport.session());
-    // app.use(flash());
-
 
     // MIDDLEWARE THAT RUNS ONLY IN DEVELOPMENT
 
@@ -53,11 +40,13 @@ module.exports = function () {
         app.use(morgan('dev'));
     }
 
+	app.use(passport.initialize());
+
 
     // HERE WE CONFIGURE THE ROUTES
     require('../features/teams/team.server.route')(app);
     require('../features/players/player.server.route')(app);
-    // require("../features/users/user.server.route")(app, passport);
+	require('../features/users/user.server.route')(app);
 
     // THIS WILL BE THE ROOT OF THE ANGULAR APP
     // the route is relative to the root of the project

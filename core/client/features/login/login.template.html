@@ -19,11 +19,11 @@
         <form id="login-box">
             <p id="login-p">Please Login to Continue</p>
             <label for="username">username</label>
-            <input type="text" name="username" placeholder="E-Mail Address">
+            <input type="text" name="username" placeholder="Username" ng-model="user.name">
             <label for="password">password</label>
-            <input type="password" name="password" placeholder="Password">
-            <a href="#/home"><input type="submit" value="Login"></a>
-            <footer class="login-footer"><a class="footer-link" href="#">Request Login</a><br><a class="footer-link" href="#">Forgot Password</a></footer>
+            <input type="password" name="password" placeholder="Password" ng-model="user.password">
+            <a href="#/home"><input type="submit" value="Login" ng-click="login()"></a>
+            <footer class="login-footer"><a class="footer-link" href="mailto:odie_de_moura@hotmail.com?subject=Request For A bowleague Login&body=" target="_top">Request Login</a><br><a class="footer-link" href="mailto:odie_de_moura@hotmail.com?subject=Forgot bowleague Login&body=My e-mail address is: " target="_top">Forgot Password</a></footer>
         </form>
     </div>
 

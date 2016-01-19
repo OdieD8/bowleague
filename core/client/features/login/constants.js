@@ -5,6 +5,6 @@ app.constant("AUTH_EVENTS", {
 });
 
 app.constant("API_ENDPOINT", {
-	url: process.env.PORT +"/api"
+	url: process.env.database + "/api"
 });
 

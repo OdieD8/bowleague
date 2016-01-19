@@ -44,7 +44,6 @@ function teamController($scope, $state, $stateParams, teamService, playerService
 
                         playerService.getPlayersByTeamId(id).then(function (data) {
 
-                                console.log(data);
                                 $scope.team.players = data;
                         });
 
@@ -62,7 +61,6 @@ function teamController($scope, $state, $stateParams, teamService, playerService
                         teamService.updateMatch(id, $scope.matches).then(function(data) {
 
                                 alert("Match Added");
-                                console.log(data);
                                 $state.go("home");
                         });
                 }

@@ -32,7 +32,6 @@ function teamService($q, $http) {
         return $http.post('/api/team', newTeam)
             .then(function(response) {
 
-                console.log(response);
                 return "Team Added!";
 
             }, function(error) {
@@ -48,7 +47,6 @@ function teamService($q, $http) {
             .then(function(response) {
                 
                 return response.data;
-                console.log(response.data);
                 
             }, function(error) {
                 console.log(error);
@@ -73,7 +71,6 @@ function teamService($q, $http) {
         
         return $http.delete('/api/team/' + id)
             .then(function(response) {
-                console.log(response);
                 return "Team Removed!";
             }, function(error) {
                 console.log(error);

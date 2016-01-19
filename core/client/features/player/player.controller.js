@@ -83,7 +83,6 @@ function playerController($scope, $state, $stateParams, playerService, userServi
 			playerService.updateGames(id, $scope.games).then(function (data) {
 
 				alert("Games Added");
-				console.log(data);
 				$state.go("players");
 
 			});
@@ -95,7 +94,6 @@ function playerController($scope, $state, $stateParams, playerService, userServi
 		var result = confirm("Are you sure you want ot remove this player?");
 		if (result) {
 			playerService.removePlayer(id).then(function (data) {
-				console.log(data);
 				$state.go("home");
 
 			});

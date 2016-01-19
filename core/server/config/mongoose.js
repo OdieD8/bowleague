@@ -1,6 +1,6 @@
 // MONGOOSE CONFIGURATION FILE
 
-var config = require('./config'),
+var config = require('./env/production'),
     mongoose = require('mongoose');
 
 module.exports = function () {

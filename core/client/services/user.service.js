@@ -1,6 +1,6 @@
 angular.module('app')
 
-.service('userService', function($q, $http, API_ENDPOINT) {
+.service('userService', function($q, $http) {
   var LOCAL_TOKEN_KEY = 'yourTokenKey';
   var isAuthenticated = false;
   var authToken;
@@ -34,7 +34,7 @@ angular.module('app')
 
   var register = function(user) {
     return $q(function(resolve, reject) {
-      $http.post(API_ENDPOINT.url + '/signup', user).then(function(result) {
+      $http.post(process.env.database + '/api/signup', user).then(function(result) {
         if (result.data.succes) {
           resolve(result.data.msg);
         } else {
@@ -46,7 +46,7 @@ angular.module('app')
 
   var login = function(user) {
     return $q(function(resolve, reject) {
-      $http.post(API_ENDPOINT.url + '/authenticate', user).then(function(result) {
+      $http.post(process.env.database + '/api/authenticate', user).then(function(result) {
         if (result.data.success) {
           storeUserCredentials(result.data.token);
           resolve(result.data.msg);

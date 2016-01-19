@@ -4,8 +4,8 @@ app.constant("AUTH_EVENTS", {
 	notAuthenticated: "auth-not-authenticated"
 });
 
-var url = process.env.database + "/api";
-app.constant("API_ENDPOINT", {
-	url: url
-});
+// var url = process.env.database + "/api";
+// app.constant("API_ENDPOINT", {
+// 	url: url
+// });
 

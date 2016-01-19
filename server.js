@@ -1,5 +1,5 @@
 //Heroku sets the value of process.env.NODE_ENV
-process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+process.env.NODE_ENV = process.env.NODE_ENV || 'production';
 
 
 //Heroku sets the port, but we also need a port for development

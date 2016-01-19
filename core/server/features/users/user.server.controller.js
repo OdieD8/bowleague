@@ -2,7 +2,7 @@ var User = require("./user.server.model");
 var mongoose = require("mongoose");
 var passport = require("passport");
 require("../../config/env/passport")(passport);
-var config = require("../../config/env/development");
+var config = require("../../config/env/production");
 var jwt = require("jwt-simple");
 
 exports.postUser = function (req, res, next) {

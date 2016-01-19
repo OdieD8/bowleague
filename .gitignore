@@ -1,2 +1,2 @@
 /node_modules
-/core/server/config/env
+/core/server/config/env/production.js

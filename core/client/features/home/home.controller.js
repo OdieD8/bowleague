@@ -113,7 +113,7 @@ function homeController($scope, $state, $filter, $http, teamService, userService
     };
 
     $scope.getInfo = function () {
-      $http.get(process.env.url + '/memberinfo').then(function (result) {
+      $http.get(process.env.database + '/memberinfo').then(function (result) {
         $scope.memberinfo = result.data.msg;
       });
     };

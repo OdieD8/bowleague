@@ -4,8 +4,7 @@ app.constant("AUTH_EVENTS", {
 	notAuthenticated: "auth-not-authenticated"
 });
 
-// var url = process.env.database + "/api";
-// app.constant("API_ENDPOINT", {
-// 	url: url
-// });
+app.constant("API_ENDPOINT", {
+	url: "http://127.0.0.1:8500/api"
+});
 

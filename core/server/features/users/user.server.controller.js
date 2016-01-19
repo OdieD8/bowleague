@@ -2,7 +2,7 @@ var User = require("./user.server.model");
 var mongoose = require("mongoose");
 var passport = require("passport");
 require("../../config/env/passport")(passport);
-var config = require("../../config/env/production");
+// var config = require("../../config/env/production");
 var jwt = require("jwt-simple");
 
 exports.postUser = function (req, res, next) {
@@ -44,7 +44,7 @@ exports.authUser = function (req, res, next) {
 			user.comparePassword(req.body.password, function(err, isMatch) {
 
 				if(isMatch && !err) {
-					var token = jwt.encode(user, config.sessionSecret);
+					var token = jwt.encode(user, process.env.sessionSecret);
 					res.json({ success: true, token: "JWT " + token })
 				}
 				else {
@@ -59,7 +59,7 @@ exports.getMember = function (req, res, next) {
 
 	var token = getToken(req.headers);
 	if(token) {
-		var decoded = jwt.decode(token, config.sessionSecret);
+		var decoded = jwt.decode(token, process.env.sessionSecret);
 
 		User.findOne({
 			name: decoded.name

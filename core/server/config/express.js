@@ -8,7 +8,7 @@ var methodOverride = require('method-override');
 var session = require('express-session');
 var morgan = require('morgan');
 var port = process.env.PORT || 8500;
-var config = require('./env/production');
+// var config = require('./env/production');
 var passport = require("passport");
 var User = require("../features/users/user.server.model");
 var jwt = require("jwt-simple");
@@ -36,9 +36,9 @@ module.exports = function () {
     // MIDDLEWARE THAT RUNS ONLY IN DEVELOPMENT
 
     // a logger so we can see activity in the console
-    if (process.env.NODE_ENV === 'development') {
-        app.use(morgan('dev'));
-    }
+    // if (process.env.NODE_ENV === 'development') {
+    //     app.use(morgan('dev'));
+    // }
 
 	app.use(passport.initialize());
 

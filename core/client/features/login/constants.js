@@ -5,6 +5,6 @@ app.constant("AUTH_EVENTS", {
 });
 
 app.constant("API_ENDPOINT", {
-	url: "http://127.0.0.1:8500/api"
+	url: process.env.PORT +"/api"
 });
 

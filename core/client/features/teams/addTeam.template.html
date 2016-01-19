@@ -6,14 +6,10 @@
 		<div class="nav-bar">
 			<div class="container">
 				<ul class="nav">
-<!--
-					<li><a href="#">HOME</a></li>
-					<li><a href="#">TEAMS</a></li>
-					<li><a href="#">PLAYERS</a></li>
--->
                     <li><a href="#/home" id="btn">HOME</a></li>
 					<li><a href="#/teams" id="btn">TEAMS</a></li>
 					<li><a href="#/players" id="btn">PLAYERS</a></li>
+					<li><a href="#" id="btn" ng-click="logout()">LOGOUT</a>
 				</ul>
 			</div>
 		</div>
@@ -22,13 +18,13 @@
 				<div class="main">
 					<h1>Add A New Team</h1>
 					<hr>
-					
+
 					<h4>Team Name&nbsp&nbsp</h4>
 					<form ng-submit="postNewTeam()">
 						<input type="text" class="team-match-input" ng-model="newTeam.name" placeholder=""></input><br>
 					</form>
 					<!--<h4>Players</h4>-->
-					
+
 					<!--<form ng-submit="addNewPlayer()">
 						<input class="team-match-input" ng-model="newPlayer" placeholder=""></input><br>
 					</form>

@@ -6,14 +6,10 @@
 		<div class="nav-bar">
 			<div class="container">
 				<ul class="nav">
-<!--
-					<li><a href="#">HOME</a></li>
-					<li><a href="#">TEAMS</a></li>
-					<li><a href="#">PLAYERS</a></li>
--->
                     <li><a href="#/home" id="btn">HOME</a></li>
 					<li><a href="#/teams" id="btn">TEAMS</a></li>
 					<li><a href="#/players" id="btn">PLAYERS</a></li>
+					<li><a href="#" id="btn" ng-click="logout()">LOGOUT</a>
 				</ul>
 			</div>
 		</div>
@@ -22,7 +18,7 @@
 				<div class="main">
 					<h1>Team/Match Editing</h1>
 					<hr>
-                    
+
 					<div class="grid-responsive">
                         <h3>Add a new match for {{ team.name }} or &nbsp<button id="team-match-submit" ng-click="removeTeam()">Remove Team</button></h3><br>
                         <input class="team-match-input" type="text" ng-model="matches.ptsWon" placeholder="Points Won"></input>

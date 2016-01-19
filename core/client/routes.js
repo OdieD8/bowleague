@@ -5,7 +5,7 @@ app.config(['$stateProvider', '$urlRouterProvider', routing]);
 function routing($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider
-        .otherwise('/home');
+        .otherwise('/login');
 
 
     $stateProvider
@@ -59,11 +59,10 @@ function routing($stateProvider, $urlRouterProvider) {
         })
 };
 
-app.run(function($rootScope, $state, AuthService, AUTH_EVENTS) {
+app.run(function($rootScope, $state, userService, AUTH_EVENTS) {
 
 	$rootScope.$on("$stateChangeStart", function(event, next, nextParams, fromState) {
-		if(!AuthService.isAuthenticated()) {
-			console.log(next.name);
+		if(!userService.isAuthenticated()) {
 			if(next.name !== "login") {
 				event.preventDefault();
 				$state.go("login");

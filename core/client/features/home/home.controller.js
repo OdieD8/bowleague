@@ -1,27 +1,27 @@
 var app = angular.module('app');
 
 
-app.controller('homeController', ['$scope', '$filter', 'teamService', 'uiGridConstants', homeController]);
+app.controller('homeController', ['$scope', '$state', '$filter', '$http', 'API_ENDPOINT', 'teamService', 'userService', 'uiGridConstants', homeController]);
 
-function homeController($scope, $filter, teamService, uiGridConstants) {
-    
+function homeController($scope, $state, $filter, $http, API_ENDPOINT, teamService, userService, uiGridConstants) {
+
     $scope.getTeams = function () {
-        
+
         teamService.getTeams()
             .then(function (data) {
-                
+
                 for (var i = 0; i < data.length; i++) {
-                    
+
                     //Points Won
                     var ptsWonArr = data[i].matches.map(function(match) {
                         return match.ptsWon;
-                    });    
+                    });
                     var totalPtsWon = 0;
                     ptsWonArr.forEach(function(e) {
                         totalPtsWon += e;
                     });
                     data[i].totalPtsWon = totalPtsWon;
-                    
+
                     //Points Lost
                     var ptsLostArr = data[i].matches.map(function(match) {
                         return match.ptsLost;
@@ -31,7 +31,7 @@ function homeController($scope, $filter, teamService, uiGridConstants) {
                         totalPtsLost += e;
                     });
                     data[i].totalPtsLost = totalPtsLost;
-                    
+
                     //Total Pins
                     var totalPinsArr = data[i].matches.map(function(match) {
                         return match.totalPins;
@@ -45,22 +45,22 @@ function homeController($scope, $filter, teamService, uiGridConstants) {
                 $scope.teams = data;
             });
     };
-    
+
     $scope.gridOptions = {
         data: "teams",
         enableFiltering: true,
         enableSorting: true,
         columnDefs: [
-            { 
+            {
                 name: 'Name',
                 field: 'name',
                 cellTemplate: '<div class="ui-grid-cell-contents"><a href="#/team/{{row.entity._id}}">{{ COL_FIELD }}</a></div>',
                 enableFiltering: true,
                 enableSorting: false
             },
-            { 
+            {
                 name: 'Points Won',
-                field: 'totalPtsWon',  
+                field: 'totalPtsWon',
                 sort: {
                     direction: uiGridConstants.DESC,
                     priority: 0
@@ -71,7 +71,7 @@ function homeController($scope, $filter, teamService, uiGridConstants) {
             { name: 'Total Pins', field: 'totalPins', enableFiltering: false}
         ]
     };
-     
+
     $scope.getTeams();
 
     $scope.getTeamById = function (id) {
@@ -106,6 +106,21 @@ function homeController($scope, $filter, teamService, uiGridConstants) {
             $scope.matches = [];
         }
 
+    };
+
+	$scope.destroySession = function () {
+      userService.logout();
+    };
+
+    $scope.getInfo = function () {
+      $http.get(API_ENDPOINT.url + '/memberinfo').then(function (result) {
+        $scope.memberinfo = result.data.msg;
+      });
+    };
+
+    $scope.logout = function () {
+      userService.logout();
+      $state.go('login');
     };
 
 };

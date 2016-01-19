@@ -9,6 +9,7 @@
                     <li><a href="#/home" id="btn">HOME</a></li>
 					<li><a href="#/teams" id="btn">TEAMS</a></li>
 					<li><a href="#/players" id="btn">PLAYERS</a></li>
+					<li><a href="#" id="btn" ng-click="logout()">LOGOUT</a>
 				</ul>
 			</div>
 		</div>
@@ -17,7 +18,7 @@
 				<div class="main">
 					<h2>Add New Players for {{ team.name }}</h2>
 					<hr>
-	
+
 					<h4>Player Name</h4>
 					<form ng-submit="addNewPlayer()">
 						<input class="team-match-input" ng-model="newPlayer.name" placeholder=""></input><br>

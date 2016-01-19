@@ -6,14 +6,10 @@
 		<div class="nav-bar">
 			<div class="container">
 				<ul class="nav">
-<!--
-					<li><a href="#">HOME</a></li>
-					<li><a href="#">TEAMS</a></li>
-					<li><a href="#">PLAYERS</a></li>
--->
                     <li><a href="#/home" id="btn">HOME</a></li>
 					<li><a href="#/teams" id="btn">TEAMS</a></li>
 					<li><a href="#/players" id="btn">PLAYERS</a></li>
+					<li><a href="#" id="btn" ng-click="logout()">LOGOUT</a>
 				</ul>
 			</div>
 		</div>
@@ -22,9 +18,9 @@
 				<div class="main">
 					<h1>Woody's Almost Classic 2015 - 2016 Teams</h1>
 					<hr>
-                    
+
 					<div class="grid-responsive">
-                       
+
                         <h3><strong>SELECT TEAM TO UPDATE</strong></h3>
                         <li class="teams-list" ng-repeat="team in teams track by $index"><a ui-sref="team({id: team._id})">{{ team.name }} </a></li><br>
 

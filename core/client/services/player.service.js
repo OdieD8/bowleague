@@ -1,6 +1,5 @@
 var app = angular.module('app');
 
-
 app.service('playerService', ['$q', '$http', playerService]);
 
 

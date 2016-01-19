@@ -1,15 +1,15 @@
 var app = angular.module('app');
 
 
-app.controller('teamController', ['$scope', '$state', '$stateParams', 'teamService', 'playerService', teamController]);
+app.controller('teamController', ['$scope', '$state', '$stateParams', 'teamService', 'playerService', 'userService', teamController]);
 
-function teamController($scope, $state, $stateParams, teamService, playerService) {
+function teamController($scope, $state, $stateParams, teamService, playerService, userService) {
 
         var id = $stateParams.id;
 
         $scope.getTeamById = function (id) {
                 teamService.getTeamById(id).then(function (data) {
-                        
+
                         //Points Won
                         var ptsWonArr = data.matches.map(function (match) {
                                 return match.ptsWon;
@@ -19,7 +19,7 @@ function teamController($scope, $state, $stateParams, teamService, playerService
                                 totalPtsWon += e;
                         });
                         data.totalPtsWon = totalPtsWon;
-                        
+
                         //Points Lost
                         var ptsLostArr = data.matches.map(function (match) {
                                 return match.ptsLost;
@@ -29,7 +29,7 @@ function teamController($scope, $state, $stateParams, teamService, playerService
                                 totalPtsLost += e;
                         });
                         data.totalPtsLost = totalPtsLost;
-                        
+
                         //Total Pins
                         var totalPinsArr = data.matches.map(function (match) {
                                 return match.totalPins;
@@ -41,13 +41,13 @@ function teamController($scope, $state, $stateParams, teamService, playerService
                         data.totalPins = totalPins;
 
                         $scope.team = data;
-                        
+
                         playerService.getPlayersByTeamId(id).then(function (data) {
-                                
+
                                 console.log(data);
                                 $scope.team.players = data;
                         });
-                        
+
                 });
         };
 
@@ -77,13 +77,16 @@ function teamController($scope, $state, $stateParams, teamService, playerService
 
                         });
                         playerService.removePlayersByTeamId(id).then(function (data) {
-                                
+
                                 $state.go("home");
                         });
                 }
         };
 
-
+	$scope.logout = function () {
+      userService.logout();
+      $state.go('login');
+    };
 
 
 };

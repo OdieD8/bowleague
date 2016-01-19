@@ -1,8 +1,6 @@
 var app = angular.module('app');
 
-
 app.service('teamService', ['$q', '$http', teamService]);
-
 
 function teamService($q, $http) {
 
@@ -14,7 +12,6 @@ function teamService($q, $http) {
                 return response.data;
             });
     };
-
 
     this.getTeamById = function(id) {
 
@@ -29,7 +26,6 @@ function teamService($q, $http) {
                 return "sorry, there is no team by that id";
             });
     };
-
 
     this.postNewTeam = function(newTeam) {
 
@@ -84,5 +80,4 @@ function teamService($q, $http) {
                 return error;
             });  
     };
-
-}
+};

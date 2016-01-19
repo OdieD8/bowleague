@@ -38,7 +38,7 @@ exports.authUser = function (req, res, next) {
 
 		if (err) throw err;
 		if (!user) {
-			res.send({ success: false, msg: "Authentication failed, user not found" });
+			res.send({ success: false, msg: "Authentication failed, user not found." });
 		}
 		else {
 			user.comparePassword(req.body.password, function(err, isMatch) {
@@ -48,7 +48,7 @@ exports.authUser = function (req, res, next) {
 					res.json({ success: true, token: "JWT " + token })
 				}
 				else {
-					res.send({ success: false, msg: "Authentication failed, wrong password" });
+					res.send({ success: false, msg: "Authentication failed, wrong password." });
 				}
 			});
 		}
@@ -67,7 +67,7 @@ exports.getMember = function (req, res, next) {
 
 			if (err) throw err;
 			if (!user) {
-				return res.status(403).send({ success: false, msg: "Authentication failed, user not found" });
+				return res.status(403).send({ success: false, msg: "Authentication failed, user not found." });
 			}
 			else {
 				res.json({ success: true, msg: "Successfully logged in " + user.name });
@@ -79,7 +79,7 @@ exports.getMember = function (req, res, next) {
 	}
 };
 
-var getToken = function(headers) {
+exports.getToken = function(headers) {
 
 	if(headers && headers.authorization) {
 		var parted = headers.authorization.split(" ");

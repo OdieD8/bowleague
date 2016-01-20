@@ -1,9 +1,9 @@
 var app = angular.module('app');
 
 
-app.controller('homeController', ['$scope', '$state', '$filter', '$http', 'teamService', 'userService', 'uiGridConstants', homeController]);
+app.controller('homeController', ['$scope', '$state', '$filter', '$http', 'teamService', 'userService', 'uiGridConstants', 'database', homeController]);
 
-function homeController($scope, $state, $filter, $http, teamService, userService, uiGridConstants) {
+function homeController($scope, $state, $filter, $http, teamService, userService, uiGridConstants, database) {
 
     $scope.getTeams = function () {
 
@@ -113,7 +113,7 @@ function homeController($scope, $state, $filter, $http, teamService, userService
     };
 
     $scope.getInfo = function () {
-      $http.get(process.env.database + '/memberinfo').then(function (result) {
+      $http.get(database + '/api/memberinfo').then(function (result) {
         $scope.memberinfo = result.data.msg;
       });
     };

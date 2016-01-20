@@ -1,3 +1,7 @@
+var gulp = require("gulp");
+require("./gulpfile");
+gulp.start("config");
+
 //Heroku sets the value of process.env.NODE_ENV
 process.env.NODE_ENV = process.env.NODE_ENV || 'production';
 

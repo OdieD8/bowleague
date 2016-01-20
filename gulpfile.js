@@ -15,5 +15,5 @@ gulp.task("config", function() {
 
 	gulp.src("config.json")
 		.pipe(gulNgConfig("bowleague", configureSetup))
-		.pipe(gulp.dest("core/client"));
+		.pipe(gulp.dest("./core/client"));
 });

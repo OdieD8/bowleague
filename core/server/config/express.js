@@ -12,11 +12,6 @@ var port = process.env.PORT || 8500;
 var passport = require("passport");
 var User = require("../features/users/user.server.model");
 var jwt = require("jwt-simple");
-var gulp = require("gulp");
-
-require("./gulpfile");
-
-gulp.start("config");
 
 module.exports = function () {
 

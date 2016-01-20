@@ -14,6 +14,6 @@ var configureSetup = {
 gulp.task("config", function() {
 
 	gulp.src("config.json")
-		.pipe(gulNgConfig("bowleague", configureSetup))
+		.pipe(gulNgConfig("app", configureSetup))
 		.pipe(gulp.dest("./core/client"));
 });

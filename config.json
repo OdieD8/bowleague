@@ -1,4 +1,5 @@
 {
     "database": "db",
-	"sessionSecret": "secret"
+	"sessionSecret": "secret",
+	"port": "port"
 }

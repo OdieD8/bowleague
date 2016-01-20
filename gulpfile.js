@@ -7,7 +7,8 @@ var configureSetup = {
 	createModule: false,
 	constants: {
 		database: process.env.database,
-		sessionSecret: process.env.sessionSecret
+		sessionSecret: process.env.sessionSecret,
+		port: process.env.PORT
 	}
 };
 

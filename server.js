@@ -1,6 +1,9 @@
 var gulp = require("gulp");
+var cors = require('cors');
 require("./gulpfile");
 gulp.start("config");
+
+
 
 //Heroku sets the value of process.env.NODE_ENV
 process.env.NODE_ENV = process.env.NODE_ENV || 'production';
@@ -20,6 +23,7 @@ var mongoose = require('./core/server/config/mongoose'),
 var db = mongoose(),
     app = express();
 
+app.use(cors());
 
 // Let's listen for incoming calls!
 app.listen(port, function () {

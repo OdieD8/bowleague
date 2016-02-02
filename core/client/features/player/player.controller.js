@@ -82,6 +82,8 @@ function playerController($scope, $state, $stateParams, playerService, userServi
 			$scope.games.series = series;
 			playerService.updateGames(id, $scope.games).then(function (data) {
 
+				$scope.getPlayerById(id);
+				window.location.reload(true);
 				alert("Games Added");
 				$state.go("players");
 

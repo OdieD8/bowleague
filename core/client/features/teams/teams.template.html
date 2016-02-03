@@ -18,12 +18,13 @@
 				<div class="main">
 					<h1>Woody's Almost Classic 2015 - 2016 Teams</h1>
 					<hr>
-
 					<div class="grid-responsive">
-
                         <h3><strong>SELECT TEAM TO UPDATE</strong></h3>
-                        <li class="teams-list" ng-repeat="team in teams track by $index"><a ui-sref="team({id: team._id})">{{ team.name }} </a></li><br>
-
+                        <table class="teams-table" style="width: 30%; margin: 0 auto 20px;">
+							<tr ng-repeat="team in teams track by $index">
+								<td class="teams-list" style="border: 1px solid blue; padding: 5px; text-align: center; border-collapse: collapse;"><a ui-sref="team({id: team._id})">{{ team.name }} </a></td><br>
+							</tr>
+						</table>
                         <input id="btn-team-match" type="submit" value="Add New Team" ui-sref="addTeam"></input>
 						<br>
 						<br>

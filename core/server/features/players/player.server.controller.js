@@ -14,7 +14,7 @@ exports.getPlayer = function (req, res, next) {
 // /api/players (GET)
 exports.getPlayers = function (req, res, next) {
 	
-	Player.find({}, 'name team games average')
+	Player.find({}, 'name team games average highGame')
 		.populate('team')
 		.exec(function (err, results) {
 		
@@ -52,6 +52,16 @@ exports.addAverage = function (req, res, next) {
 		if (err) res.status(500).send(err);
 		else res.json(results);
 	});	
+};
+
+// /api/playerHighs/:id (PUT)
+exports.addHighGame = function (req, res, next) {
+
+	Player.findByIdAndUpdate(req.params.id, {highGame: req.body.highGame}, function (err, results) {
+
+		if (err) res.status(500).send(err);
+		else res.json(results);
+	});
 };
 
 // /api/player/:id (DELETE)

@@ -70,6 +70,17 @@ function playerService($q, $http) {
 			});
 	};
 	
+	this.updateHighGame = function(id, highGame) {
+	
+		return $http.put('/api/playerHighs/' + id, highGame)
+			.then(function(response) {
+			
+			return response.data;
+		}, function(error) {
+			return error;
+		});
+	};
+	
 	this.removePlayer = function(id) {
 		
 		return $http.delete('/api/player/' + id)

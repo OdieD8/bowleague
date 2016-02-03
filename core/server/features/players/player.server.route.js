@@ -17,5 +17,8 @@ module.exports = function (app) {
 		
 	app.route("/api/players")
 		.get(Ctrl.getPlayers);
+		
+	app.route("/api/playerHighs/:id")
+		.put(Ctrl.addHighGame);
 				
 };

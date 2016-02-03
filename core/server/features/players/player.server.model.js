@@ -13,6 +13,8 @@ var Player = new Schema({
 		id: false	
 	}],
 	average: { type: Number },
+	highGame: { type: Number },
+	highSeries: { type: Number },
 	date: { type: Date, default: new Date() }
 });
 

@@ -68,6 +68,11 @@ function playersController($scope, $state, $filter, $stateParams, teamService, p
 				enableFiltering: false
 			},
 			{
+				name: 'High Game',
+				field: 'highGame',
+			    enableFiltering: false
+			},
+			{
                 name: 'Team',
                 field: 'team.name',
                 enableFiltering: true

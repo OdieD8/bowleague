@@ -59,12 +59,27 @@ function playerController($scope, $state, $stateParams, playerService, userServi
 			//Total Pins
 			var totalPins = data.totalGm1 + data.totalGm2 + data.totalGm3;
 			data.totalPins = totalPins;
+			
+			//High Game
+			var allGamesArr = gamesOneArr.concat(gamesTwoArr, gamesThreeArr);
+			
+			$scope.playerHighGame = 0;
+			var playerHighGmFunc = function() {
+			
+				$scope.playerHighGame = Math.max.apply(null, allGamesArr);
+			};
+			
+			playerHighGmFunc();
+			
+			data.highGame = $scope.playerHighGame;
 
 			data.gamesPlayed = counter;
 
 			$scope.player = data;
 
 			playerService.updateAverage(id, data);
+			
+			playerService.updateHighGame(id, data);
 
 		});
 	};

@@ -71,6 +71,15 @@ function playerController($scope, $state, $stateParams, playerService, userServi
 			
 			playerHighGmFunc();
 			
+			$scope.playerHighSeries = 0;
+			
+			var highSeriesArr = data.games.map(function (game) {
+			
+				return game.series;
+			});
+			
+			$scope.playerHighSeries = Math.max.apply(null, highSeriesArr);
+			
 			data.highGame = $scope.playerHighGame;
 
 			data.gamesPlayed = counter;

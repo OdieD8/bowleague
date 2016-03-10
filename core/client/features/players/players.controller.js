@@ -45,8 +45,10 @@ function playersController($scope, $state, $filter, $stateParams, teamService, p
 				$scope.players = data;
 		});
 	};
+	
+	$scope.getPlayers();
 
-	 $scope.gridOptions = {
+	$scope.gridOptions = {
         data: "players",
         enableFiltering: true,
         enableSorting: true,
@@ -84,8 +86,6 @@ function playersController($scope, $state, $filter, $stateParams, teamService, p
             // { name: 'Total Pins', field: 'totalPins', enableFiltering: false}
         ]
     };
-
-	$scope.getPlayers();
 
 	$scope.logout = function () {
       userService.logout();

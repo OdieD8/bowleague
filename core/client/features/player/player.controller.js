@@ -64,15 +64,10 @@ function playerController($scope, $state, $stateParams, playerService, userServi
 			var allGamesArr = gamesOneArr.concat(gamesTwoArr, gamesThreeArr);
 			
 			$scope.playerHighGame = 0;
-			var playerHighGmFunc = function() {
 			
-				$scope.playerHighGame = Math.max.apply(null, allGamesArr);
-			};
+			$scope.playerHighGame = Math.max.apply(null, allGamesArr);
 			
-			playerHighGmFunc();
-			
-			$scope.playerHighSeries = 0;
-			
+			//High Series
 			var highSeriesArr = data.games.map(function (game) {
 			
 				return game.series;

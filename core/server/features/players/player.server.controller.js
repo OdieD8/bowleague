@@ -14,7 +14,7 @@ exports.getPlayer = function (req, res, next) {
 // /api/players (GET)
 exports.getPlayers = function (req, res, next) {
 	
-	Player.find({}, 'name team games average highGame')
+	Player.find({}, 'name team games average highGame highSeries')
 		.populate('team')
 		.exec(function (err, results) {
 		

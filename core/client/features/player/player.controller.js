@@ -78,9 +78,13 @@ function playerController($scope, $state, $stateParams, playerService, userServi
 				return game.series;
 			});
 			
+			$scope.playerHighSeries = 0;
+			
 			$scope.playerHighSeries = Math.max.apply(null, highSeriesArr);
 			
 			data.highGame = $scope.playerHighGame;
+			
+			data.highSeries = $scope.playerHighSeries;
 
 			data.gamesPlayed = counter;
 
@@ -89,6 +93,8 @@ function playerController($scope, $state, $stateParams, playerService, userServi
 			playerService.updateAverage(id, data);
 			
 			playerService.updateHighGame(id, data);
+			
+			playerService.updateHighSeries(id, data);
 
 		});
 	};

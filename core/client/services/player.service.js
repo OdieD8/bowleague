@@ -72,11 +72,23 @@ function playerService($q, $http) {
 	
 	this.updateHighGame = function(id, highGame) {
 	
-		return $http.put('/api/playerHighs/' + id, highGame)
+		return $http.put('/api/playerHighGame/' + id, highGame)
 			.then(function(response) {
 			
 			return response.data;
 		}, function(error) {
+			return error;
+		});
+	};
+	
+	this.updateHighSeries = function(id, highSeries) {
+	
+		return $http.put('/api/playerHighSeries/' + id, highSeries)
+			.then(function(response) {
+		
+			return response.data;
+		}, function(error) {
+		
 			return error;
 		});
 	};

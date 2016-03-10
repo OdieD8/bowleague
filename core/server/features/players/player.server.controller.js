@@ -64,6 +64,16 @@ exports.addHighGame = function (req, res, next) {
 	});
 };
 
+// /api/playerHighSeries/:id (PUT)
+exports.addHighSeries = function (req, res, next) {
+
+	Player.findByIdAndUpdate(req.params.id, {highSeries: req.body.highSeries}, function (err, results) {
+
+		if (err) res.status(500).send(err);
+		else res.json(results);
+	});
+};
+
 // /api/player/:id (DELETE)
 exports.removePlayer = function (req, res, next) {
 	

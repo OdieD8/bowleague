@@ -43,7 +43,6 @@ function playersController($scope, $state, $filter, $stateParams, teamService, p
 			.then(function (data) {
 
 				$scope.players = data;
-
 		});
 	};
 
@@ -72,6 +71,11 @@ function playersController($scope, $state, $filter, $stateParams, teamService, p
 				field: 'highGame',
 			    enableFiltering: false
 			},
+			{
+                name: 'High Series',
+                field: 'highSeries',
+                enableFiltering: false
+            },
 			{
                 name: 'Team',
                 field: 'team.name',
